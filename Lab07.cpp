@@ -1,6 +1,6 @@
 /*************************************************************
  * 1. Name:
- *      Demo
+ *      Josh and Kai
  * 2. Assignment Name:
  *      Lab 07: Orbit Simulator
  * 3. Assignment Description:
@@ -178,13 +178,7 @@ void callBack(const Interface* pUI, void* p)
    pt.setMeters(0.0, 0.0);
    gout.drawEarth(pt, pDemo->angleEarth);
    
-   
-//   if (pDemo->angleDegrees < 0)
-//      pDemo->ddy = -1 * pDemo->ddy;
-   
    pDemo->angleRadians = atan2(pDemo->gpsX, pDemo->gpsY);
-   
-   cout << pDemo->angleRadians << endl;
    
    pDemo->ddx = pDemo->heightGravity * sin(pDemo->angleRadians);
    pDemo->ddy = pDemo->heightGravity * cos(pDemo->angleRadians);
