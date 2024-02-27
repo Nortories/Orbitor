@@ -17,6 +17,8 @@
 #include "position.h"      // for POINT
 #include <cmath>       // for MATH
 #include <iomanip>
+
+#define M_PI 3.14159265358979323846
 using namespace std;
 
 /*************************************************************************
@@ -49,8 +51,15 @@ public:
       ptGPS.setPixelsX(0.0);
       ptGPS.setPixelsY(42164000);
 //
-//      ptStar.setPixelsX(ptUpperRight.getPixelsX() * random(-0.5, 0.5));
-//      ptStar.setPixelsY(ptUpperRight.getPixelsY() * random(-0.5, 0.5));
+      for (int i = 0; i < 50; i++)
+      {
+      ptStar.setPixelsX(ptUpperRight.getPixelsX() * random(-0.5, 0.5));
+      ptStar.setPixelsY(ptUpperRight.getPixelsY() * random(-0.5, 0.5));
+      stars[i] = ptStar;
+      }
+      
+
+      
 
 //      angleShip = 0.0;
       angleEarth = 0.0;
@@ -73,8 +82,9 @@ public:
 //   Position ptCrewDragon;
 //   Position ptShip;
    Position ptGPS;
-//   Position ptStar;
+   Position ptStar;
    Position ptUpperRight;
+   Position stars [50];
 
    unsigned char phaseStar;
 
@@ -132,7 +142,7 @@ void callBack(const Interface* pUI, void* p)
    // rotate the earth
    pDemo->angleEarth += -(2.0 * M_PI / 30.0) * (1440.0 / 86400.0);
 //   pDemo->angleShip += 0.02;
-//   pDemo->phaseStar++;
+   pDemo->phaseStar++;
 
    //
    // draw everything
@@ -172,7 +182,10 @@ void callBack(const Interface* pUI, void* p)
 //   gout.drawFragment(pt, pDemo->angleShip);
 //
 //   // draw a single star
-//   gout.drawStar(pDemo->ptStar, pDemo->phaseStar);
+   for (int i = 0; i < 50; i++)
+   {
+	  gout.drawStar(pDemo->stars[i], pDemo->phaseStar);
+   }
 
    // draw the earth
    pt.setMeters(0.0, 0.0);
