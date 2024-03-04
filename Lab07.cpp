@@ -17,8 +17,8 @@
 #include "position.h"      // for POINT
 #include <cmath>       // for MATH
 #include <iomanip>
+#include "physics.h"
 
-#define M_PI 3.14159265358979323846
 using namespace std;
 
 /*************************************************************************
@@ -191,13 +191,13 @@ void callBack(const Interface* pUI, void* p)
    pt.setMeters(0.0, 0.0);
    gout.drawEarth(pt, pDemo->angleEarth);
    
-   pDemo->angleRadians = atan2(pDemo->gpsX, pDemo->gpsY);
+   pDemo->angleRadians = calculateRadius(pDemo->gpsX, pDemo->gpsY);
    
-   pDemo->ddx = pDemo->heightGravity * sin(pDemo->angleRadians);
-   pDemo->ddy = pDemo->heightGravity * cos(pDemo->angleRadians);
+   pDemo->ddx = calculateDDX(pDemo->heightGravity, pDemo->angleRadians);
+   pDemo->ddy = calculateDDY(pDemo->heightGravity, pDemo->angleRadians);
 
-   pDemo->dx = pDemo->dx + pDemo->ddx * pDemo->secPerFrame;
-   pDemo->dy = pDemo->dy + pDemo->ddy * pDemo->secPerFrame;
+   pDemo->dx = calculateDX(pDemo->dx, pDemo->ddx, SEC_PER_FRAME);
+   pDemo->dy = calculateDY(pDemo->dy, pDemo->ddy, SEC_PER_FRAME);
    
    pDemo->gpsX = pDemo->gpsX + pDemo->dx * pDemo->secPerFrame + 1/2 * pDemo->ddx * (pow(pDemo->secPerFrame, 2));
    pDemo->gpsY = pDemo->gpsY + pDemo->dy * pDemo->secPerFrame + 1/2 * pDemo->ddy * (pow(pDemo->secPerFrame, 2));
