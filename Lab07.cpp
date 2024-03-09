@@ -11,6 +11,7 @@
  *      5 hours
  *****************************************************************/
 
+#define _USE_MATH_DEFINES // for cmath's M_PI
 #include <cassert>      // for ASSERT
 #include "uiInteract.h" // for INTERFACE
 #include "uiDraw.h"     // for RANDOM and DRAW*
@@ -150,6 +151,7 @@ void callBack(const Interface* pUI, void* p)
 
    Position pt;
    ogstream gout(pt);
+   Physics physics;
 
    // draw satellites
 //   gout.drawCrewDragon(pDemo->ptCrewDragon, pDemo->angleShip);
@@ -191,13 +193,13 @@ void callBack(const Interface* pUI, void* p)
    pt.setMeters(0.0, 0.0);
    gout.drawEarth(pt, pDemo->angleEarth);
    
-   pDemo->angleRadians = calculateRadius(pDemo->gpsX, pDemo->gpsY);
+   pDemo->angleRadians = physics.calculateRadius(pDemo->gpsX, pDemo->gpsY);
    
-   pDemo->ddx = calculateDDX(pDemo->heightGravity, pDemo->angleRadians);
-   pDemo->ddy = calculateDDY(pDemo->heightGravity, pDemo->angleRadians);
+   pDemo->ddx = physics.calculateDDX(pDemo->heightGravity, pDemo->angleRadians);
+   pDemo->ddy = physics.calculateDDY(pDemo->heightGravity, pDemo->angleRadians);
 
-   pDemo->dx = calculateDX(pDemo->dx, pDemo->ddx, SEC_PER_FRAME);
-   pDemo->dy = calculateDY(pDemo->dy, pDemo->ddy, SEC_PER_FRAME);
+   pDemo->dx = physics.calculateDX(pDemo->dx, pDemo->ddx, SEC_PER_FRAME);
+   pDemo->dy = physics.calculateDY(pDemo->dy, pDemo->ddy, SEC_PER_FRAME);
    
    pDemo->gpsX = pDemo->gpsX + pDemo->dx * pDemo->secPerFrame + 1/2 * pDemo->ddx * (pow(pDemo->secPerFrame, 2));
    pDemo->gpsY = pDemo->gpsY + pDemo->dy * pDemo->secPerFrame + 1/2 * pDemo->ddy * (pow(pDemo->secPerFrame, 2));

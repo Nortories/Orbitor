@@ -1,2 +1,30 @@
 ﻿  Lab07.cpp
-  Lab07.vcxproj -> C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\x64\Debug\Lab07.exe
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\physics.h(42,26): error C2061: syntax error: identifier 'Object'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\physics.h(58,22): error C2061: syntax error: identifier 'Object'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\physics.h(11,1): error C2011: 'Physics': 'class' type redefinition
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\physics.h(10,7): message : see declaration of 'Physics'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\Lab07.cpp(154,12): error C2079: 'physics' uses undefined class 'Physics'
+  test.cpp
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\physics.h(42,26): error C2061: syntax error: identifier 'Object'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\physics.h(58,22): error C2061: syntax error: identifier 'Object'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\physics.h(11,1): error C2011: 'Physics': 'class' type redefinition
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\physics.h(10,7): message : see declaration of 'Physics'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(44,11): error C2079: 'physics' uses undefined class 'Physics'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(77,11): error C2079: 'physics' uses undefined class 'Physics'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(108,11): error C2079: 'physics' uses undefined class 'Physics'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(128,11): error C2079: 'physics' uses undefined class 'Physics'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(148,11): error C2079: 'physics' uses undefined class 'Physics'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(168,11): error C2079: 'physics' uses undefined class 'Physics'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(188,11): error C2079: 'physics' uses undefined class 'Physics'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(207,11): error C2079: 'physics' uses undefined class 'Physics'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(227,11): error C2079: 'physics' uses undefined class 'Physics'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(247,11): error C2079: 'physics' uses undefined class 'Physics'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(267,11): error C2079: 'physics' uses undefined class 'Physics'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(287,11): error C2079: 'physics' uses undefined class 'Physics'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(301,11): error C2079: 'physics' uses undefined class 'Physics'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(315,11): error C2079: 'physics' uses undefined class 'Physics'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(330,11): error C2079: 'physics' uses undefined class 'Physics'
+  testObject.h
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\physics.h(42,26): error C2061: syntax error: identifier 'Object'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\physics.h(58,22): error C2061: syntax error: identifier 'Object'
+  Generating Code...
