@@ -1,3 +1,12 @@
+/***********************************************************************
+ * Heaader File:
+ *    Test : TestObjects
+ * Author:
+ *    Joshua & Kai
+ * Summary:
+ *    This is the test driver for the physics class. It is responsible
+ *    for testing the Physics class. 
+ ************************************************************************/
 #pragma once
 
 #include "physics.h"
@@ -344,4 +353,7 @@ private:
 		assert(obj2.getHitPoints() == 9998);
 
 	}
+	private:
+		Physics p;
+		double tb = p.getTimeDilation();
 };

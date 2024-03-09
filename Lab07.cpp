@@ -19,6 +19,9 @@
 #include <cmath>       // for MATH
 #include <iomanip>
 #include "physics.h"
+#include "config.h"
+
+#include "game.h"
 
 using namespace std;
 
@@ -92,15 +95,11 @@ public:
    double angleShip;
    double angleEarth;
    
-   const double secPerFrame = 48; // 1 sec of simulation time is 48 sec of real time
-   const double geoDistance = 42164000; // how far needs to be from the Earth
+
    double angleRadians; // get the radians for the degrees
-   const double rEarth = 6378000 ; // the Earth radius
    double gpsX; // get the GPS init X position
    double gpsY; // get the GPS init Y position
    double gravity = -9.8067; // the gravity is always pointing down
-   double heightGravity = -0.2244; // gravity for the GPS
-   double geoSpeed = 3100;
    double dx;
    double dy;
    double ddx;
@@ -195,14 +194,14 @@ void callBack(const Interface* pUI, void* p)
    
    pDemo->angleRadians = physics.calculateRadius(pDemo->gpsX, pDemo->gpsY);
    
-   pDemo->ddx = physics.calculateDDX(pDemo->heightGravity, pDemo->angleRadians);
-   pDemo->ddy = physics.calculateDDY(pDemo->heightGravity, pDemo->angleRadians);
+   pDemo->ddx = physics.calculateDDX(-0.2244, pDemo->angleRadians);
+   pDemo->ddy = physics.calculateDDY(-0.2244, pDemo->angleRadians);
 
-   pDemo->dx = physics.calculateDX(pDemo->dx, pDemo->ddx, SEC_PER_FRAME);
-   pDemo->dy = physics.calculateDY(pDemo->dy, pDemo->ddy, SEC_PER_FRAME);
+   pDemo->dx = physics.calculateDX(pDemo->dx, pDemo->ddx, 30);
+   pDemo->dy = physics.calculateDY(pDemo->dy, pDemo->ddy, 30);
    
-   pDemo->gpsX = pDemo->gpsX + pDemo->dx * pDemo->secPerFrame + 1/2 * pDemo->ddx * (pow(pDemo->secPerFrame, 2));
-   pDemo->gpsY = pDemo->gpsY + pDemo->dy * pDemo->secPerFrame + 1/2 * pDemo->ddy * (pow(pDemo->secPerFrame, 2));
+   pDemo->gpsX = pDemo->gpsX + pDemo->dx * secPerFrame + 1/2 * pDemo->ddx * (pow(48, 2));
+   pDemo->gpsY = pDemo->gpsY + pDemo->dy * secPerFrame + 1/2 * pDemo->ddy * (pow(48, 2));
    
    pDemo->ptGPS.setMeters(pDemo->gpsX, pDemo->gpsY);
    gout.drawGPS(pDemo->ptGPS, pDemo->angleShip);

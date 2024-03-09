@@ -1,25 +1,2 @@
 ﻿  Lab07.cpp
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\Lab07.cpp(196,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\Lab07.cpp(196,55): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\Lab07.cpp(198,65): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\Lab07.cpp(198,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\Lab07.cpp(199,65): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\Lab07.cpp(199,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\Lab07.cpp(201,52): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\Lab07.cpp(201,41): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\Lab07.cpp(202,52): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\Lab07.cpp(202,41): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  test.cpp
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(113,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(133,30): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(153,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(173,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(193,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(212,34): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(232,34): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(252,34): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(272,34): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  testObject.h
-  Generating Code...
-  LINK : C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\x64\Debug\Lab07.exe not found or not built by the last incremental link; performing full link
   Lab07.vcxproj -> C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\x64\Debug\Lab07.exe

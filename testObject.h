@@ -1,3 +1,12 @@
+/***********************************************************************
+ * Heaader File:
+ *    Test : TestObjects
+ * Author:
+ *    Joshua & Kai
+ * Summary:
+ *    This is the unit test for the object class it tests all the 
+ *    member functions and member variables of the object class
+ ************************************************************************/
 #pragma once
 
 #include <iostream>
