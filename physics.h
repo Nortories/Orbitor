@@ -1,3 +1,5 @@
+#pragma once
+
 #include <cmath>
 #include <iostream> // Include for cout
 #include "object.h"
@@ -10,36 +12,36 @@ using namespace std;
 class Physics
 {
 public:
-    float calculateDistance(float x, float y) {
+    double calculateDistance(float x, float y) {
         return sqrt(x * x + y * y);
     }
 
-    float calculateAngle(float x, float y) {
+    double calculateAngle(float x, float y) {
         return atan2(y, x); // atan2 parameters are typically (y, x)
     }
 
-    float calculateDDX(float gravity, float angleRadians) {
+    double calculateDDX(float gravity, float angleRadians) {
         return gravity * sin(angleRadians);
     }
 
-    float calculateDDY(float gravity, float angleRadians) {
+    double calculateDDY(float gravity, float angleRadians) {
         return gravity * cos(angleRadians);
     }
 
-    float calculateDX(float dx, float ddx, float time) {
+    double calculateDX(float dx, float ddx, float time) {
         return dx + ddx * time;
     }
 
-    float calculateDY(float dy, float ddy, float time) {
+    double calculateDY(float dy, float ddy, float time) {
         return dy + ddy * time;
     }
 
-    float calculateRadius(float x, float y) {
+    double calculateRadius(float x, float y) {
         return 0;
 	}
 
     // Pass Object by reference to modify its properties directly
-    void calculateNewPos(Object& obj) {
+    void calculateNewPos(Object obj) {
         // Uncomment and correct your calculation logic as needed
         /*
         double angleRadians = calculateAngle(obj.getPosition().getMetersX(), obj.getPosition().getMetersY());
@@ -55,8 +57,10 @@ public:
     }
 
     // Pass Objects by reference to avoid unnecessary copying
-    bool isCollision(Object& obj1, Object& obj2) {
+    bool isCollision(Object obj1, Object obj2) {
         // Implement collision logic
         return false;
     }
+
+
 };

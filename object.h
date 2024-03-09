@@ -3,7 +3,6 @@
 #include <iostream>
 #include <string>
 #include "position.h"
-#include "physics.h"
 #include "fragments.h"
 
 using namespace std;
