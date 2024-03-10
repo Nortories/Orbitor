@@ -389,26 +389,30 @@ private:
 		//setup
 		//dummyGame creates a object inside it's member var array
 		class dummyGame : public Game {
-			public:
-				Object obj;
+		public:
+			dummyGame() {
+			Object obj;
 			//dummyGame array of objects
-				Object objects[1] = { obj };
-		};
+			Object _objects[1] = { obj };
+		}
+			vector<Object> _objects;
+
+	};
 
 		dummyGame game;
 		//verify setup
-		assert(game.obj.getHitPoints() == 1);
+		assert(game._objects[0].getHitPoints() == 1);
 		//exercise
 		try
 		{
-			game.obj.destroy();
+			game._objects[0].destroy();
 		}
 		catch (const std::exception&)
 		{
 			assert(false);
 		}
 		//verify exercise
-		assert(sizeof(game.objects) == 0);
+		assert(sizeof(game._objects[0]) == 0);
 		//teardown
 	}
 

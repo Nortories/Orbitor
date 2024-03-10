@@ -154,6 +154,7 @@
     <ClInclude Include="physics.h" />
     <ClInclude Include="position.h" />
     <ClInclude Include="projectile.h" />
+    <ClInclude Include="stars.h" />
     <ClInclude Include="test.h" />
     <ClInclude Include="testGame.h" />
     <ClInclude Include="testPhysics.h" />

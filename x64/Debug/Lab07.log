@@ -1,2 +1,14 @@
 ﻿  Lab07.cpp
+  test.cpp
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(122,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(142,30): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(162,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(182,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(202,36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(221,34): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(241,34): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(261,34): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testPhysics.h(281,34): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  testObject.h
+  Generating Code...
   Lab07.vcxproj -> C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\x64\Debug\Lab07.exe

@@ -1,4 +1,5 @@
 #pragma once
+#include "config.h"
 
 
 //replace
@@ -12,10 +13,11 @@
 #define HOURS_DAY 24
 #define FPS 30
 #define SPEED_OF_LIGHT 299792458
-#define EARTH_FULL_ROTATION 60
+#define EARTH_FULL_ROTATION 86400 // 24 hours in seconds
 #define M_PI 3.14159265358979323846
 #define RADIUS_OF_EARTH 6378000
 #define GEOSTATIONARY_ORBIT 42164000
+#define NUMBER_OF_STARS 500
 
 
 

@@ -35,8 +35,8 @@ public:
    Demo(Position ptUpperRight) :
       ptUpperRight(ptUpperRight)
    {
-//      ptHubble.setPixelsX(ptUpperRight.getPixelsX() * random(-0.5, 0.5));
-//      ptHubble.setPixelsY(ptUpperRight.getPixelsY() * random(-0.5, 0.5));
+      ptHubble.setPixelsX(ptUpperRight.getPixelsX() * random(-0.5, 0.5));
+      ptHubble.setPixelsY(ptUpperRight.getPixelsY() * random(-0.5, 0.5));
 //
 //      ptSputnik.setPixelsX(ptUpperRight.getPixelsX() * random(-0.5, 0.5));
 //      ptSputnik.setPixelsY(ptUpperRight.getPixelsY() * random(-0.5, 0.5));
@@ -54,6 +54,7 @@ public:
       // It sets the init GPS position
       ptGPS.setPixelsX(0.0);
       ptGPS.setPixelsY(42164000);
+
 //
       for (int i = 0; i < 50; i++)
       {
@@ -118,93 +119,44 @@ void callBack(const Interface* pUI, void* p)
 {
    // the first step is to cast the void pointer into a game object. This
    // is the first step of every single callback function in OpenGL. 
-   Demo* pDemo = (Demo*)p;
-   Physics physics;
-
-   //
-   // accept input
-   //
-
-   // move by a little
-//   if (pUI->isUp())
-//      pDemo->ptShip.addPixelsY(1.0);
-//   if (pUI->isDown())
-//      pDemo->ptShip.addPixelsY(-1.0);
-//   if (pUI->isLeft())
-//      pDemo->ptShip.addPixelsX(-1.0);
-//   if (pUI->isRight())
-//      pDemo->ptShip.addPixelsX(1.0);
-
-
-   //
-   // perform all the game logic
-   //
-
-   // rotate the earth
-   pDemo->angleEarth += -(2.0 * M_PI / 30.0) * (1440.0 / 86400.0);
-//   pDemo->angleShip += 0.02;
-   pDemo->phaseStar++;
-
-   //
-   // draw everything
-   //
+   //Demo* pDemo = (Demo*)p;
+   Game* pGame = (Game*)p;
 
    Position pt;
    ogstream gout(pt);
 
-   // draw satellites
-//   gout.drawCrewDragon(pDemo->ptCrewDragon, pDemo->angleShip);
-   gout.drawHubble    (pDemo->ptHubble,     pDemo->angleShip);
-//   gout.drawSputnik   (pDemo->ptSputnik,    pDemo->angleShip);
-//   gout.drawStarlink  (pDemo->ptStarlink,   pDemo->angleShip);
-//   gout.drawShip      (pDemo->ptShip,       pDemo->angleShip, pUI->isSpace());
-   gout.drawGPS       (pDemo->ptGPS,        pDemo->angleShip);
+   pGame->draw(&gout);
 
-//   // draw parts
-//   pt.setPixelsX(pDemo->ptCrewDragon.getPixelsX() + 20);
-//   pt.setPixelsY(pDemo->ptCrewDragon.getPixelsY() + 20);
-//   gout.drawCrewDragonRight(pt, pDemo->angleShip); // notice only two parameters are set
-//   pt.setPixelsX(pDemo->ptHubble.getPixelsX() + 20);
-//   pt.setPixelsY(pDemo->ptHubble.getPixelsY() + 20);
-//   gout.drawHubbleLeft(pt, pDemo->angleShip);      // notice only two parameters are set
-//   pt.setPixelsX(pDemo->ptGPS.getPixelsX() + 20);
-//   pt.setPixelsY(pDemo->ptGPS.getPixelsY() + 20);
-//   gout.drawGPSCenter(pt, pDemo->angleShip);       // notice only two parameters are set
-//   pt.setPixelsX(pDemo->ptStarlink.getPixelsX() + 20);
-//   pt.setPixelsY(pDemo->ptStarlink.getPixelsY() + 20);
-//   gout.drawStarlinkArray(pt, pDemo->angleShip);   // notice only two parameters are set
-//
-//   // draw fragments
-//   pt.setPixelsX(pDemo->ptSputnik.getPixelsX() + 20);
-//   pt.setPixelsY(pDemo->ptSputnik.getPixelsY() + 20);
-//   gout.drawFragment(pt, pDemo->angleShip);
-//   pt.setPixelsX(pDemo->ptShip.getPixelsX() + 20);
-//   pt.setPixelsY(pDemo->ptShip.getPixelsY() + 20);
-//   gout.drawFragment(pt, pDemo->angleShip);
-//
-//   // draw a single star
-   for (int i = 0; i < 50; i++)
+   //Physics physics;
+
+   //pDemo->angleEarth -= physics.rotationSpeed();
+   //pDemo->phaseStar++;
+
+
+   //gout.drawHubble    (pDemo->ptHubble,     pDemo->angleShip);/*
+   //gout.drawGPS       (pDemo->ptGPS,        pDemo->angleShip);*/
+ /*  for (int i = 0; i < 50; i++)
    {
-	  gout.drawStar(pDemo->stars[i], pDemo->phaseStar);
-   }
+       gout.drawStar(pDemo->stars[i], pDemo->phaseStar);
+   }*/
 
    // draw the earth
-   pt.setMeters(0.0, 0.0);
-   gout.drawEarth(pt, pDemo->angleEarth);
-   
-   pDemo->angleRadians = physics.calculateRadius(pDemo->gpsX, pDemo->gpsY);
-   
-   pDemo->ddx = physics.calculateDDX(-0.2244, pDemo->angleRadians);
-   pDemo->ddy = physics.calculateDDY(-0.2244, pDemo->angleRadians);
-
-   pDemo->dx = physics.calculateDX(pDemo->dx, pDemo->ddx, 30);
-   pDemo->dy = physics.calculateDY(pDemo->dy, pDemo->ddy, 30);
-   
-   pDemo->gpsX = pDemo->gpsX + pDemo->dx * secPerFrame + 1/2 * pDemo->ddx * (pow(48, 2));
-   pDemo->gpsY = pDemo->gpsY + pDemo->dy * secPerFrame + 1/2 * pDemo->ddy * (pow(48, 2));
-   
-   pDemo->ptGPS.setMeters(pDemo->gpsX, pDemo->gpsY);
-   gout.drawGPS(pDemo->ptGPS, pDemo->angleShip);
+//   pt.setMeters(0.0, 0.0);
+//   gout.drawEarth(pt, pDemo->angleEarth);
+//
+//   pDemo->angleRadians = physics.calculateRadius(pDemo->gpsX, pDemo->gpsY);
+//
+//   pDemo->ddx = physics.calculateDDX(-0.2244, pDemo->angleRadians);
+//   pDemo->ddy = physics.calculateDDY(-0.2244, pDemo->angleRadians);
+//
+//   pDemo->dx = physics.calculateDX(pDemo->dx, pDemo->ddx, 30);
+//   pDemo->dy = physics.calculateDY(pDemo->dy, pDemo->ddy, 30);
+//
+//   pDemo->gpsX = pDemo->gpsX + pDemo->dx * secPerFrame + 1 / 2 * pDemo->ddx * (pow(48, 2));
+//   pDemo->gpsY = pDemo->gpsY + pDemo->dy * secPerFrame + 1 / 2 * pDemo->ddy * (pow(48, 2));
+//
+//   pDemo->ptGPS.setMeters(pDemo->gpsX, pDemo->gpsY);
+//   gout.drawGPS(pDemo->ptGPS, pDemo->angleShip);
    
 }
 
@@ -230,14 +182,14 @@ int main(int argc, char** argv)
    ptUpperRight.setPixelsX(1000.0);
    ptUpperRight.setPixelsY(1000.0);
    Interface ui(0, NULL,
-      "Demo",   /* name on the window */
+      "Orbitor",   /* name on the window */
       ptUpperRight);
-
+   Game game(ptUpperRight);
    // Initialize the demo
    Demo demo(ptUpperRight);
 
    // set everything into action
-   ui.run(callBack, &demo);
+   ui.run(callBack, &game);
 
 
    return 0;
