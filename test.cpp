@@ -9,24 +9,19 @@
 
 #include "test.h"
 #include "testPosition.h"
+#include "testPhysics.h"
 #include "testObject.h"
-//#include "testAngle.h"
 
 /*****************************************************************
  * TEST RUNNER
  * Runs all the unit tests
  ****************************************************************/
-void testRunner()
+void Test::testRunner()
 {
    TestPosition().run();
+   cout << "Test Position pass" << endl;
+   TestPhysics().run();
+   cout << "Test Physics pass" << endl;
    TestObject().run();
-}
-
-void testObject()
-{
-   TestObject().run();
-}
-void testAngle()
-{
-   //TestAngle().run();
+   cout << "Test Object pass" << endl;
 }

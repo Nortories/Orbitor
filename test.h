@@ -9,6 +9,7 @@
 
 #pragma once
 
-void testRunner();
-void testObject();
-//void testAngle();
+class Test {
+public:
+   void testRunner();
+};
