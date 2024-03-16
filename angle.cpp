@@ -15,39 +15,39 @@ void Angle::normalizeRadians()
 }
 
 
-void Angle::setRadians(float radians)
+void Angle::setRadians(double radians)
 { 
 	this->radians = radians;
 	normalizeRadians();
 }
 
-void Angle::setDegrees(float degrees)
+void Angle::setDegrees(double degrees)
 {
 	this->radians = degrees * (M_PI / 180);
 	normalizeRadians();
 }
 
-void Angle::setDxDy(float dx, float dy)
+void Angle::setDxDy(double dx, double dy)
 {
 	this->radians = atan2(dy, dx);
 	normalizeRadians();
 }
 
-float Angle::getDegrees() const
+double Angle::getDegrees() const
 {
 	return(radiansToDegrees());
 }
 
-float Angle::getRadians() const
+double Angle::getRadians() const
 {
 	return(this->radians);
 }
 
-float Angle::radiansToDegrees() const
+double Angle::radiansToDegrees() const
 {
 	return(this->radians * (180 / M_PI));
 }
-void Angle::rotate(float radians)
+void Angle::rotate(double radians)
 {
 	this->radians += radians;
 	normalizeRadians();

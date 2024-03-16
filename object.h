@@ -7,23 +7,22 @@
 #include "velocity.h"
 #include "angle.h"
 #include <list>
-#include "part.h"
 #include "config.h"
 
 using namespace std;
+class Part;
 
 class Object
 {
 public:
 	//default constructor
-	Object() : angle(0), radius(0), angularVelocity(0), destroyed(false), hitPoints(0), mass(0) {
-		this->type = "none";
+	Object() : angle(0), radius(0), angularVelocity(0), destroyed(false), hitPoints(1), mass(0) {
 		this->velocity = Velocity(0, 0);
 		this->position = Position(0, 0);
 	}
 
 	//min constructor
-	Object(string type, Velocity& velocity, Position& position, Angle& angle) {
+	Object(Velocity velocity, Position position, Angle angle) {
 		this->type = type;
 		this->velocity = velocity;
 		this->position = position;
@@ -31,7 +30,7 @@ public:
 		this->radius = 0;
 		this->angularVelocity = 0;
 		this->destroyed = false;
-		this->hitPoints = 0;
+		this->hitPoints = 1;
 		this->mass = 0;
 	}
 
@@ -73,43 +72,17 @@ public:
 	void setMass(float mass) { this->mass = mass; }
 
 	//member functions
-	virtual void draw(ogstream* gout) {/*override and draw self*/}
+	virtual void draw(ogstream* gout) {/*override and draw self*/
+		gout->drawCrewDragon(position, 0);
+	}
 
 	void triggerDestruction() 
 	{ destroyed = true; }
 
-	virtual void destroy(list<Object*>* obj)
-	{
-		list<Part*> debris = getParts();
-		float offset = (2 * M_PI) / debris.size();
-		int partNum = 0;
-
-		// auto is a keyword that tells the compiler to figure out the 
-		// type of the variable at compile time. This is needed because
-		// the list class does not have a type. It is a template class.
-		for (auto& part : debris)
-		{
-
-		// The kick method is a method of the part class. It sets the
-		// velocity of the part so that it will move in a circle around
-		// the center of the object.
-		part->kick(offset * partNum);
-
-		// push_back is a method of the list class.
-		// It adds part to the end of the list so that it can be drawn.
-		// Oject-> is needed to access the list of parts in the Object class.
-		obj->push_back(part);
-		partNum++;
-		}
-	}
+	virtual void destroy(list<Object*>* objList);
 
 	void update(float time, float gravity) {
-
-		float newX = position.getMetersX() + (velocity.getDx() * time);
-		float newY = position.getMetersY() + (velocity.getDy() * time);
-		position.setMetersX(newX);
-		position.setMetersY(newY);
-
+		// update the velocity of the object
 		float gravityDirection = atan2(position.getMetersX(), position.getMetersY());
 
 		float ddx = gravity * sin(gravityDirection);
@@ -120,13 +93,18 @@ public:
 
 		velocity.setDx(newDx);
 		velocity.setDy(newDy);
+		
+		// update new position of the object
+		float newX = position.getMetersX() + (velocity.getDx() * time);
+		float newY = position.getMetersY() + (velocity.getDy() * time);
+		position.setMetersX(newX);
+		position.setMetersY(newY);
 	}
 
 	void move()
 	{
 		float aGravity = getGravity(position);
-		updateVelocity(aGravity, FPS);
-		updatePosition(FPS);
+		update(aGravity, FPS);
 		angle.rotate(this->angularVelocity);
 	}
 	bool hit(Object* obj)
@@ -134,8 +112,9 @@ public:
 		float distance = sqrt((position.getMetersX() - obj->position.getMetersX()) * (position.getMetersX() - obj->position.getMetersX()) +
 			(position.getMetersY() - obj->position.getMetersY()) * (position.getMetersY() - obj->position.getMetersY()));
 		float hitBox = (radius + obj->radius) * 128000;
-		if (distance < hitBox)
+		if (distance <= hitBox)
 		{
+			this->hitPoints--;
 			return true;
 		}
 		else
@@ -180,24 +159,19 @@ protected:
 		return Angle(atan2(position.getMetersX(), position.getMetersY()));
 	};
 
-	void updateVelocity(float aGravity, float time);
-	void updatePosition(float time);
+	virtual list<Part*> getParts();
 
-	virtual list<Part*> getParts()
-	{
-		list<Part*> parts;
-		return parts;
-	};
+
 
 	//member variables
-	string type;
+	string type = "none";
 	Velocity velocity;
 	Position position;
 	Angle angle;
 	float radius;
 	float angularVelocity;
 	bool destroyed;
-	int hitPoints;
+	int hitPoints = 1;
 	float mass;
 
 };

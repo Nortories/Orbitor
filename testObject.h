@@ -12,8 +12,13 @@
 #include <iostream>
 #include "object.h"
 #include "game.h"
+#include "velocity.h"
+#include "angle.h"
 #include <cassert>
 #include <string>
+#include "config.h"
+#include "uiDraw.h"
+#include "uiInteract.h"
 
 using namespace std;
 
@@ -25,25 +30,17 @@ public:
 	{
 		// Constructor
 		testConstructorDefault();
-		// Getters
-		testGetters();
-		// Setters
+		//// Setters
 		testSetters();
-		// Update
+		//// Update
 		testUpdateAtRest();
+		testUpdateWithGravity();
 		testUpdateInMotion();
-		testUpdateAcceleration();
-		// Hit
 		testCollision();
-		// Draw
 		testDraw();
-		// Fragment
-		testFragment();
-		// Destroy
+		testDestructionTrigger();
 		testDestroy();
-		testDestroyOnHit();
-		testNotDestroyOnHit();
-
+		testHP();
 	}
 private:
 
@@ -55,301 +52,229 @@ private:
 		//exercise
 		Object obj;
 		//verify
-		assert(obj.getType() == "");
+		assert(obj.getType() == "none");
+		assert(obj.getVelocity().getDx() == 0.0);
+		assert(obj.getVelocity().getDy() == 0.0);
 		assert(obj.getPosition().getMetersX() == 0.0);
 		assert(obj.getPosition().getMetersY() == 0.0);
-		assert(obj.getHasFragment() == true);
-		assert(obj.getHasCollide() == true);
-		assert(obj.getAngle() == 0.0);
-		assert(obj.getTime() == 0.0);
-		assert(obj.getRadius() == 0);
-		assert(obj.getDx() == 0.0);
-		assert(obj.getDy() == 0.0);
-		assert(obj.getDdx() == 0.0);
-		assert(obj.getDdy() == 0.0);
-		assert(obj.getMass() == 0);
+		assert(obj.getAngle().getDegrees() == 0.0);
+		assert(obj.getRadius() == 0.0);
+		assert(obj.getAngularVelocity() == 0.0);
+		assert(obj.getIsDestroyed() == false);
 		assert(obj.getHitPoints() == 1);
+		assert(obj.getMass() == 0);
 		//teardown
+		cout << "Constructor default test passed" << endl;
 	}
 
-	/***************************************************
-	 *	Test Object constructor creates object with default values
-	 ***************************************************/
+//	/***************************************************
+//	 *	Test Object set constructor
+//	 ***************************************************/
 	void testConstructorNonDefault() const {
 		//setup
-		//exercise
-		Object obj("type", Position(1.0, 1.0), true, true, 1.0, 1.0, 1, 1.0, 1.0, 1.0, 1.0, 1, 1);
+
+		//exercise string type, Velocity velocity, Position position, Angle angle, float radius, float angularVelocity, bool destroyed, int hitPoints, float mass
+		Object obj("gps", Velocity(5, 5), Position(1.0, 1.0), Angle(90), 3, 5, false, 1, 100);
 		//verify
-		assert(obj.getType() == "type");
+		assert(obj.getType() == "gps");
+		assert(obj.getVelocity().getDx() == 5.0);
+		assert(obj.getVelocity().getDy() == 5.0);
 		assert(obj.getPosition().getMetersX() == 1.0);
 		assert(obj.getPosition().getMetersY() == 1.0);
-		assert(obj.getHasFragment() == true);
-		assert(obj.getHasCollide() == true);
-		assert(obj.getAngle() == 1.0);
-		assert(obj.getTime() == 1.0);
-		assert(obj.getRadius() == 1);
-		assert(obj.getDx() == 1.0);
-		assert(obj.getDy() == 1.0);
-		assert(obj.getDdx() == 1.0);
-		assert(obj.getDdy() == 1.0);
-		assert(obj.getMass() == 1);
+		assert(obj.getAngle().getDegrees() == 90.0);
+		assert(obj.getRadius() == 90.0);
+		assert(obj.getAngularVelocity() == 3.0);
+		assert(obj.getIsDestroyed() == false);
 		assert(obj.getHitPoints() == 1);
+		assert(obj.getMass() == 100);
 		//teardown
+		cout << "Constructor non default test passed" << endl;
 	}
 
-	/***************************************************
-	 * Test Object getters, object has member variables:
-	 ***************************************************/
-	void testGetters() const {
-		//setup
-		Object obj("type", Position(1.0, 1.0), true, true, 1.0, 1.0, 1, 1.0, 1.0, 1.0, 1.0, 1, 1);
-		//exercise
-		//verify
-		assert(obj.getType() == "type");
-		assert(obj.getPosition().getMetersX() == 1.0);
-		assert(obj.getPosition().getMetersY() == 1.0);
-		assert(obj.getHasFragment() == true);
-		assert(obj.getHasCollide() == true);
-		assert(obj.getAngle() == 1.0);
-		assert(obj.getTime() == 1.0);
-		assert(obj.getRadius() == 1);
-		assert(obj.getDx() == 1.0);
-		assert(obj.getDy() == 1.0);
-		assert(obj.getDdx() == 1.0);
-		assert(obj.getDdy() == 1.0);
-		assert(obj.getMass() == 1);
-		assert(obj.getHitPoints() == 1);
-		//teardown
-	}
-
-	/***************************************************
-	* Test Object setters, object has member variables:
-	***************************************************/
+//	/***************************************************
+//	* Test Object setters, object has member variables:
+//	***************************************************/
 	void testSetters() const {
 		//setup
 		Object obj;
 		//exercise
 		try
 		{
-			obj.setType("type");
+			obj.setType("gps3");
+			obj.setVelocity(Velocity(1.0, 1.0));
 			obj.setPosition(Position(1.0, 1.0));
-			obj.setHasFragment(true);
-			obj.setHasCollide(true);
-			obj.setAngle(1.0);
-			obj.setTime(0.0);
+			obj.setAngle(Angle(90.0));
 			obj.setRadius(1);
-			obj.setDx(1.0);
-			obj.setDy(1.0);
-			obj.setDdx(1.0);
-			obj.setDdy(1.0);
-			obj.setMass(1);
+			obj.setAngularVelocity(1.0);
+			obj.setIsDestroyed(true);
 			obj.setHitPoints(1);
+			obj.setMass(1);
 		}
 		catch (const std::exception&)
 		{
 			assert(false);
 		}
 		//verify
-		assert(obj.getType() == "type");
+		assert(obj.getType() == "gps3");
+		assert(obj.getVelocity().getDx() == 1.0);
+		assert(obj.getVelocity().getDy() == 1.0);
 		assert(obj.getPosition().getMetersX() == 1.0);
 		assert(obj.getPosition().getMetersY() == 1.0);
-		assert(obj.getHasFragment() == true);
-		assert(obj.getHasCollide() == true);
-		assert(obj.getAngle() == 1.0);
-		assert(obj.getTime() == 0.0); 
 		assert(obj.getRadius() == 1);
-		assert(obj.getDx() == 1.0);
-		assert(obj.getDy() == 1.0);
-		assert(obj.getDdx() == 1.0);
-		assert(obj.getDdy() == 1.0);
-		assert(obj.getMass() == 1);
+		assert(obj.getAngularVelocity() == 1.0);
+		assert(obj.getIsDestroyed() == true);
 		assert(obj.getHitPoints() == 1);
+		assert(obj.getMass() == 1);
+		//teardown
+		cout<< "Setters test passed"<<endl;
+	}
+
+//	/***************************************************
+//	* Test Object update() falling with gravity
+//	***************************************************/
+	void testUpdateWithGravity() const {
+		//setup
+		// Object in the top left of the screen (x/y 1000) not moving
+		Object obj(Velocity(0,0), Position(1000.0, 1000.0),Angle(0));
+		//verify setup
+		assert(obj.getType() == "none");
+		assert(obj.getPosition().getMetersX() == 1000.0);
+		assert(obj.getPosition().getMetersY() == 1000.0);
+		assert(obj.getAngle().getDegrees() == 0.0);
+		//cout << "Obj starting pos: " << obj.getPosition().getMetersX()<<" : "<< obj.getPosition().getMetersY() << endl;
+		//exercise
+		try
+		{
+			obj.update(1, GRAVITY);
+		}
+		catch (const std::exception&)
+		{
+			assert(false);
+		}
+		//verify exercise
+		assert(obj.getType() == "none");
+		// falling because of gravity
+		assert(obj.getPosition().getMetersX() == 993.06561279296875);
+		assert(obj.getPosition().getMetersY() == 993.06561279296875);
+		//cout << "Obj after update pos: " << obj.getPosition().getMetersX() << " : " << obj.getPosition().getMetersY() << endl;
+		cout << "Update with gravity test passed" << endl;
 		//teardown
 	}
 
-	/***************************************************
-	* Test Object update() with object at rest
-	***************************************************/
+	//	/***************************************************
+//	* Test Object update() with object at rest
+//	***************************************************/
 	void testUpdateAtRest() const {
 		//setup
-		// Object in the top left of the screen (x/y 1000) not moving with 100kg mass
-		Object obj("type", Position(1000.0, 1000.0), true, true, 0.0, 0.0, 10, 0.0, 0.0, 0.0, 0.0, 100, 1);
+		// Object in the top left of the screen (x/y 1000) not moving
+		Object obj(Velocity(0, 0), Position(1000.0, 1000.0), Angle(0));
 		//verify setup
-		assert(obj.getType() == "type");
+		assert(obj.getType() == "none");
 		assert(obj.getPosition().getMetersX() == 1000.0);
 		assert(obj.getPosition().getMetersY() == 1000.0);
-		assert(obj.getHasFragment() == true);
-		assert(obj.getHasCollide() == true);
-		assert(obj.getAngle() == 0.0);
-		assert(obj.getTime() == 0.0);
-		assert(obj.getRadius() == 10);
-		assert(obj.getDx() == 0.0);
-		assert(obj.getDy() == 0.0);
-		assert(obj.getDdx() == 0.0);
-		assert(obj.getDdy() == 0.0);
-		assert(obj.getMass() == 100);
-		assert(obj.getHitPoints() == 1);
+		assert(obj.getAngle().getDegrees() == 0.0);
+		//cout << "Obj starting pos: " << obj.getPosition().getMetersX() << " : " << obj.getPosition().getMetersY() << endl;
 		//exercise
 		try
 		{
-			obj.update();
+			obj.update(1, GRAVITY);
 		}
 		catch (const std::exception&)
 		{
 			assert(false);
 		}
 		//verify exercise
-		assert(obj.getType() == "type");
-		assert(obj.getPosition().getMetersX() == 1000.0);
-		assert(obj.getPosition().getMetersY() == 1000.0);
-		assert(obj.getHasFragment() == true);
-		assert(obj.getHasCollide() == true);
-		assert(obj.getAngle() == 0.0);
-		assert(obj.getTime() == 1.0); // assuming 1 second has passed
-		assert(obj.getRadius() == 10);
-		assert(obj.getDx() == 0.0);
-		assert(obj.getDy() == 0.0);
-		assert(obj.getDdx() == 0.0);
-		assert(obj.getDdy() == 0.0);
-		assert(obj.getMass() == 100);
-		assert(obj.getHitPoints() == 1);
+		assert(obj.getType() == "none");
+		// falling because of gravity
+		assert(obj.getPosition().getMetersX() == 993.06561279296875);
+		assert(obj.getPosition().getMetersY() == 993.06561279296875);
+		//cout << "Obj after update pos: " << obj.getPosition().getMetersX() << " : " << obj.getPosition().getMetersY() << endl;
+		cout << "Update at rest test passed" << endl;
 		//teardown
 	}
 
-	/***************************************************
-	* Test Object update() with one object in motion
-	***************************************************/
+//	/***************************************************
+//	* Test Object update() with one object in motion
+//	***************************************************/
 	void testUpdateInMotion() const {
 		//setup
-		// Object in the top left of the screen (x/y 1000) moving down/left at 10m per update with 10m/s^2 acceleration and 100kg mass
-		Object obj("type", Position(1000.0, 1000.0), true, true, 0.0, 0.0, 10, -10.0, -10.0, -10.0, -10.0, 100, 1);
+		Object obj(Velocity(100, 100), Position(1000.0, 1000.0), Angle(0));
 		//verify setup
-		assert(obj.getType() == "type");
+		assert(obj.getType() == "none");
 		assert(obj.getPosition().getMetersX() == 1000.0);
 		assert(obj.getPosition().getMetersY() == 1000.0);
-		assert(obj.getHasFragment() == true);
-		assert(obj.getHasCollide() == true);
-		assert(obj.getAngle() == 0.0);
-		assert(obj.getTime() == 0.0);
-		assert(obj.getRadius() == 10);
-		assert(obj.getDx() == -10.0);
-		assert(obj.getDy() == -10.0);
-		assert(obj.getDdx() == -10.0);
-		assert(obj.getDdy() == -10.0);
-		assert(obj.getMass() == 100);
-		assert(obj.getHitPoints() == 1);
+		assert(obj.getAngle().getDegrees() == 0.0);
+		//cout << "Obj starting pos: " << obj.getPosition().getMetersX() << " : " << obj.getPosition().getMetersY() << endl;
 		//exercise
 		try
 		{
-			obj.update();
+			obj.update(1, GRAVITY);
 		}
 		catch (const std::exception&)
 		{
 			assert(false);
 		}
 		//verify exercise
-		assert(obj.getType() == "type");
-		assert(obj.getPosition().getMetersX() == 990.0);
-		assert(obj.getPosition().getMetersY() == 990.0);
-		assert(obj.getHasFragment() == true);
-		assert(obj.getHasCollide() == true);
-		assert(obj.getAngle() == 0.0);
-		assert(obj.getTime() == 1.0); // assuming 1 second has passed
-		assert(obj.getRadius() == 10);
-		assert(obj.getDx() == -20.0);
-		assert(obj.getDy() == -20.0);
-		assert(obj.getDdx() == -10.0);
-		assert(obj.getDdy() == -10.0);
-		assert(obj.getMass() == 100);
-		assert(obj.getHitPoints() == 1);
-		
+		assert(obj.getType() == "none");
+		//not x/y 1100 because of gravity is pulling
+		assert(obj.getPosition().getMetersX() == 1093.0656738281250);
+		assert(obj.getPosition().getMetersY() == 1093.0656738281250);
+		//cout << "Obj after update pos: " << obj.getPosition().getMetersX() << " : " << obj.getPosition().getMetersY() << endl;
+		cout << "Update in motion test passed" << endl;
 		//teardown
 	}	
 
-	/***************************************************
-	* Test Object update() with one object not in motion but with acceleration
-	***************************************************/
-	void testUpdateAcceleration() const {
-		//setup
-		// Object in the top left of the screen (x/y 1000) not moving with 10m/s^2 acceleration and 100kg mass
-		Object obj("type", Position(1000.0, 1000.0), true, true, 0.0, 0.0, 10, 0.0, 0.0, 10.0, 10.0, 100, 1);
-		//verify setup
-		assert(obj.getType() == "type");
-		assert(obj.getPosition().getMetersX() == 1000.0);
-		assert(obj.getPosition().getMetersY() == 1000.0);
-		assert(obj.getHasFragment() == true);
-		assert(obj.getHasCollide() == true);
-		assert(obj.getAngle() == 0.0);
-		assert(obj.getTime() == 0.0);
-		assert(obj.getRadius() == 10);
-		assert(obj.getDx() == 0.0);
-		assert(obj.getDy() == 0.0);
-		assert(obj.getDdx() == 10.0);
-		assert(obj.getDdy() == 10.0);
-		assert(obj.getMass() == 100);
-		assert(obj.getHitPoints() == 1);
-		//exercise
-		try
-		{
-			obj.update();
-		}
-		catch (const std::exception&)
-		{
-			assert(false);
-		}
-		//verify exercise
-		assert(obj.getType() == "type");
-		assert(obj.getPosition().getMetersX() == 1010.0);
-		assert(obj.getPosition().getMetersY() == 1010.0);
-		assert(obj.getHasFragment() == true);
-		assert(obj.getHasCollide() == true);
-		assert(obj.getAngle() == 0.0);
-		assert(obj.getTime() == 1.0); // assuming 1 second has passed
-		assert(obj.getRadius() == 10);
-		assert(obj.getDx() == 0.0);
-		assert(obj.getDy() == 0.0);
-		assert(obj.getDdx() == 10.0);
-		assert(obj.getDdy() == 10.0);
-		assert(obj.getMass() == 100);
-		assert(obj.getHitPoints() == 1);
-		//teardown
-	}
-
-	/***************************************************
-	* Test Object hit function
-	***************************************************/
+//	/***************************************************
+//	* Test Object hit function
+//	***************************************************/
 	void testCollision() const {
 		//setup
-		Object obj;
-		//verify setup
-		assert(obj.getHitPoints() == 1);
-		//exercise
-		try
-		{
-			obj.hit();
-		}
-		catch (const std::exception&)
-		{
 
-		}
+		Object obj1(Velocity(100, 100), Position(1000.0, 1000.0), Angle(0));
+		Object obj2(Velocity(100, 100), Position(1000.0, 1000.0), Angle(0));
+		Object obj3(Velocity(100, 100), Position(1000.0, 1000.0), Angle(0));
+		// does not collide with any of the above
+		Object obj4(Velocity(100, 100), Position(0, 0), Angle(0));
+
+		//verify setup
+		//exercise
+		assert(obj1.hit(&obj2) == true);
+		assert(obj1.hit(&obj3) == true);
+		assert(obj2.hit(&obj3) == true);
+		assert(obj2.hit(&obj1) == true);
+		assert(obj3.hit(&obj1) == true);
+		assert(obj3.hit(&obj2) == true);
+		assert(obj1.hit(&obj4) == false);
+		assert(obj2.hit(&obj4) == false);
+		assert(obj3.hit(&obj4) == false);
+		assert(obj4.hit(&obj1) == false);
+		assert(obj4.hit(&obj2) == false);
+		assert(obj4.hit(&obj3) == false);
+
+		cout << "Collision test passed" << endl;
 		//verify exercise
-		assert(obj.getHitPoints() == 0);
 		//teardown
 	}
 
-	/***************************************************
-	* Test Object draw function
-	* This function is void and does not return anything
-	* Test will verify that the function does not throw an error
-	* Needs manual verification
-	***************************************************/
+//	/***************************************************
+//	* Test Object draw function
+//	* This function is void and does not return anything
+//	* Test will verify that the function does not throw an error
+//	* Needs manual verification
+//	***************************************************/
 	void testDraw() const {
 		//setup
+		Position ptUpperRight;
+		ptUpperRight.setZoom(128000.0 /* 128km equals 1 pixel */);
+		ptUpperRight.setPixelsX(1000.0);
+		ptUpperRight.setPixelsY(1000.0);
+		Position pt;
+		ogstream gout(pt);
 		Object obj;
 		//exercise
 		try
 		{
-		obj.draw();
+			obj.draw(&gout);
 		}
 		catch (const std::exception&)
 		{
@@ -357,20 +282,21 @@ private:
 		}
 		//verify exercise
 		//teardown
+		cout << "Draw testdraw drawCrewDragon passed" << endl;
 	}
 
-	/***************************************************
-	* Test Object fragment function
-	***************************************************/
-	void testFragment() const {
+//	/***************************************************
+//	* Test Object DestructionTrigger function
+//	***************************************************/
+	void testDestructionTrigger() const {
 		//setup
 		Object obj;
 		//verify setup
-		assert(obj.getHasFragment() == false);
+		assert(obj.getIsDestroyed() == false);
 		//exercise
 		try
 		{
-			obj.fragment();
+			obj.triggerDestruction();
 		}
 		catch (const std::exception&)
 		{
@@ -378,98 +304,75 @@ private:
 		}
 		//verify exercise
 		//manually verify fragment is drawn on screen
-		assert(obj.getHasFragment() == true);
+		assert(obj.getIsDestroyed() == true);
 		//teardown
+		cout << "Destruction trigger test passed" << endl;
 	}
 
-	/***************************************************
-	* Test Object destroy function
-	***************************************************/
+//	/***************************************************
+//	* Test Object destroy function
+//	***************************************************/
 	void testDestroy() const {
 		//setup
-		//dummyGame creates a object inside it's member var array
-		class dummyGame : public Game {
-			public:
-				Object obj;
-			//dummyGame array of objects
-				Object objects[1] = { obj };
-		};
-
-		dummyGame game;
+		list<Object*> Objects;
+		Object part;
+		Objects.push_back(&part);
+		Object mainObj;
 		//verify setup
-		assert(game.obj.getHitPoints() == 1);
+		assert(Objects.size() == 1);
 		//exercise
 		try
 		{
-			game.obj.destroy();
+			mainObj.destroy(&Objects);
 		}
 		catch (const std::exception&)
 		{
 			assert(false);
 		}
 		//verify exercise
-		assert(sizeof(game.objects) == 0);
+		assert(Objects.size() == 1);
 		//teardown
+		cout << "Destroy test passed" << endl;
 	}
 
-	/***************************************************
-	* Test Object destroy on hit HP = 0
-	***************************************************/
-	void testDestroyOnHit() const {
-		//setup
-		//dummyGame creates a object inside it's member var array
-		class dummyGame : public Game {
-		public:
-			Object obj;
-			//dummyGame array of objects
-			Object objects[1] = { obj };
-		};
+//	/***************************************************
+//	* Test Object destroy on hit HP = 0
+//	***************************************************/
+	void testHP() const {
+		Object obj1(Velocity(100, 100), Position(1000.0, 1000.0), Angle(0));
+		Object obj2(Velocity(100, 100), Position(1000.0, 1000.0), Angle(0));
+		Object obj3(Velocity(100, 100), Position(1000.0, 1000.0), Angle(0));
+		// does not collide with any of the above
+		Object obj4(Velocity(100, 100), Position(0, 0), Angle(0));
 
-		dummyGame game;
 		//verify setup
-		assert(game.objects[0].getHitPoints() == 1);
+		assert(obj1.getHitPoints() == 1);
+		assert(obj2.getHitPoints() == 1);
+		assert(obj3.getHitPoints() == 1);
+		assert(obj4.getHitPoints() == 1);
+		assert(obj1.hit(&obj2) == true);
+		assert(obj1.hit(&obj3) == true);
+		assert(obj2.hit(&obj3) == true);
+		assert(obj2.hit(&obj1) == true);
+		assert(obj3.hit(&obj1) == true);
+		assert(obj3.hit(&obj2) == true);
+		assert(obj1.hit(&obj4) == false);
+		assert(obj2.hit(&obj4) == false);
+		assert(obj3.hit(&obj4) == false);
+		assert(obj4.hit(&obj1) == false);
+		assert(obj4.hit(&obj2) == false);
+		assert(obj4.hit(&obj3) == false);
 		//exercise
-		try
-		{
-			game.objects[0].hit();
-		}
-		catch (const std::exception&)
-		{
-			assert(false);
-		}
+		obj1.hit(&obj2);
+		obj2.hit(&obj1);
+		obj4.hit(&obj1);
+
 		//verify exercise
-		assert(sizeof(game.objects) == 0);
-	}
 
-	/***************************************************
-	* Test Object !destroy on hit HP = 1
-	***************************************************/
-	//setup
-	void testNotDestroyOnHit() const {
-
-
-		//dummyGame creates a object inside it's member var array
-	class dummyGame : public Game {
-	public:
-		Object obj;
-		//dummyGame array of objects
-		Object objects[1] = { obj };
-	};
-
-	dummyGame game;
-	game.objects[0].setHitPoints(2);
-	//verify setup
-	assert(game.objects[0].getHitPoints() == 2);
-	//exercise
-	try
-	{
-		game.objects[0].hit();
-	}
-	catch (const std::exception&)
-	{
-		assert(false);
-	}
-	//verify exercise
-	assert(sizeof(game.objects) == 0);
+		assert(obj1.getHitPoints() <= 0);
+		assert(obj2.getHitPoints() <= 0);
+		assert(obj4.getHitPoints() == 1);
+		//teardown
+		cout << "Collision HP passed" << endl;
 	}
 };

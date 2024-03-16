@@ -30,13 +30,10 @@
     <ClCompile Include="position.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="testObject.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="angle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="satellite.cpp">
+    <ClCompile Include="object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -54,12 +51,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="position.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="physics.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="testPhysics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="object.h">
@@ -86,10 +77,16 @@
     <ClInclude Include="velocity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="satellite.h">
+    <ClInclude Include="part.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="part.h">
+    <ClInclude Include="physics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testPhysics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

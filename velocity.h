@@ -13,23 +13,23 @@ public:
 		setDy(dy);
 	}
 	
-	Velocity(float vel, const Angle& ang) {
+	Velocity(double vel, const Angle& ang) {
 		this->dx = -vel * cos(ang.getRadians());
 		this->dy = vel * sin(ang.getRadians());
 	};
-	Velocity(float dx, float dy) {
+	Velocity(double dx, double dy) {
 		this->dx = dx;
 		this->dy = dy;
 	};
 
-	float getDx() const { return dx; };
-	float getDy() const { return dy; };
+	double getDx() const { return dx; };
+	double getDy() const { return dy; };
 
-	void setDx(float dx) { this->dx = dx; };
-	void setDy(float dy) { this->dy = dy; };
+	void setDx(double dx) { this->dx = dx; };
+	void setDy(double dy) { this->dy = dy; };
 
-	void addDx(float dx) { this->dx += dx; };
-	void addDy(float dy) { this->dy += dy; };
+	void addDx(double dx) { this->dx += dx; };
+	void addDy(double dy) { this->dy += dy; };
 
 	void add(Velocity velocity) {
 		this->dx = this->dx + velocity.dx;
@@ -37,7 +37,7 @@ public:
 	};
 
 private:
-	float dx;
-	float dy;
+	double dx;
+	double dy;
 };
 

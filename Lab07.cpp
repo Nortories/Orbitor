@@ -20,7 +20,7 @@
 #include <iomanip>
 #include "physics.h"
 #include "config.h"
-
+#include "test.h"
 #include "game.h"
 
 using namespace std;
@@ -224,20 +224,23 @@ int WINAPI wWinMain(
 int main(int argc, char** argv)
 #endif // !_WIN32
 {
-   // Initialize OpenGL
-   Position ptUpperRight;
-   ptUpperRight.setZoom(128000.0 /* 128km equals 1 pixel */);
-   ptUpperRight.setPixelsX(1000.0);
-   ptUpperRight.setPixelsY(1000.0);
-   Interface ui(0, NULL,
-      "Demo",   /* name on the window */
-      ptUpperRight);
+    // From the test.cpp file
+    testRunner();
 
-   // Initialize the demo
-   Demo demo(ptUpperRight);
+   // Initialize OpenGL
+   //Position ptUpperRight;
+   //ptUpperRight.setZoom(128000.0 /* 128km equals 1 pixel */);
+   //ptUpperRight.setPixelsX(1000.0);
+   //ptUpperRight.setPixelsY(1000.0);
+   //Interface ui(0, NULL,
+   //   "Demo",   /* name on the window */
+   //   ptUpperRight);
+
+   //// Initialize the demo
+   //Demo demo(ptUpperRight);
 
    // set everything into action
-   ui.run(callBack, &demo);
+   //ui.run(callBack, &demo);
 
 
    return 0;

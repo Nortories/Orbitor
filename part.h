@@ -1,7 +1,8 @@
 #pragma once
 #include "object.h"
-class Part :
-    public Object
+
+// Object base class is undefined because
+class Part : public Object
 {
 public:
     Part() {};
@@ -16,13 +17,12 @@ public:
 		this->angle.setRadians(radians);
 	};
 
-    void kick(float kickAngle) {
-		this->velocity.add(Velocity(random(5000, 9000), Angle(kickAngle)));
-		move();
-		move();
-		move();
-		move();
-		move();
+    void throwPart(float throwPartAngle) {
+		this->velocity.add(Velocity(random(5000, 9000), Angle(throwPartAngle)));
+		// move the PART 5 times to make sure it doesn't get stuck
+		for (int i = 0; i < 5; i++) {
+			move();
+		}
 	};
 };
 

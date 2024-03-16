@@ -10,3 +10,5 @@
 #pragma once
 
 void testRunner();
+void testObject();
+//void testAngle();

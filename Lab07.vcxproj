@@ -141,10 +141,9 @@
   <ItemGroup>
     <ClCompile Include="angle.cpp" />
     <ClCompile Include="Lab07.cpp" />
+    <ClCompile Include="object.cpp" />
     <ClCompile Include="position.cpp" />
-    <ClCompile Include="satellite.cpp" />
     <ClCompile Include="test.cpp" />
-    <ClCompile Include="testObject.h" />
     <ClCompile Include="uiDraw.cpp" />
     <ClCompile Include="uiInteract.cpp" />
   </ItemGroup>
@@ -158,9 +157,9 @@
     <ClInclude Include="physics.h" />
     <ClInclude Include="position.h" />
     <ClInclude Include="projectile.h" />
-    <ClInclude Include="satellite.h" />
     <ClInclude Include="test.h" />
     <ClInclude Include="testGame.h" />
+    <ClInclude Include="testObject.h" />
     <ClInclude Include="testPhysics.h" />
     <ClInclude Include="testPosition.h" />
     <ClInclude Include="uiDraw.h" />

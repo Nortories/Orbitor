@@ -11,6 +11,7 @@
 #include "testPosition.h"
 #include "testPhysics.h"
 #include "testObject.h"
+//#include "testAngle.h"
 
 /*****************************************************************
  * TEST RUNNER
@@ -21,4 +22,13 @@ void testRunner()
    TestPosition().run();
    TestPhysics().run();
    TestObject().run();
+}
+
+void testObject()
+{
+   TestObject().run();
+}
+void testAngle()
+{
+   //TestAngle().run();
 }

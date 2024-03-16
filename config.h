@@ -7,7 +7,7 @@
 #define heightGravity -0.2244 // gravity for the GPS
 #define geoSpeed 3100
 
-#define GRAVITY 9.8067
+#define GRAVITY -9.8067
 #define PROJECTILE_SPEED 1000
 #define HOURS_DAY 24
 #define FPS 48

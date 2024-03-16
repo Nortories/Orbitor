@@ -226,7 +226,7 @@ public:
     }
 
     double calculateRadius(double x, double y) {
-        return 0;
+        return sqrt(x * x + y * y);
 	}
 
     // Pass Object by reference to modify its properties directly
