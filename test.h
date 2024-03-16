@@ -9,4 +9,7 @@
 
 #pragma once
 
-void testRunner();
+class Test {
+public:
+   void testRunner();
+};

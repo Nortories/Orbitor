@@ -20,6 +20,7 @@
 #include <iomanip>
 #include "physics.h"
 #include "config.h"
+#include "test.h"
 
 #include "game.h"
 
@@ -119,7 +120,6 @@ void callBack(const Interface* pUI, void* p)
    // the first step is to cast the void pointer into a game object. This
    // is the first step of every single callback function in OpenGL. 
    Demo* pDemo = (Demo*)p;
-   Physics physics;
 
    //
    // accept input
@@ -192,13 +192,13 @@ void callBack(const Interface* pUI, void* p)
    pt.setMeters(0.0, 0.0);
    gout.drawEarth(pt, pDemo->angleEarth);
    
-   pDemo->angleRadians = physics.calculateRadius(pDemo->gpsX, pDemo->gpsY);
+//   pDemo->angleRadians = calculateRadius(pDemo->gpsX, pDemo->gpsY);
    
-   pDemo->ddx = physics.calculateDDX(-0.2244, pDemo->angleRadians);
-   pDemo->ddy = physics.calculateDDY(-0.2244, pDemo->angleRadians);
+   pDemo->ddx = calculateDDX(-0.2244, pDemo->angleRadians);
+   pDemo->ddy = calculateDDY(-0.2244, pDemo->angleRadians);
 
-   pDemo->dx = physics.calculateDX(pDemo->dx, pDemo->ddx, 30);
-   pDemo->dy = physics.calculateDY(pDemo->dy, pDemo->ddy, 30);
+   pDemo->dx = calculateDX(pDemo->dx, pDemo->ddx, 30);
+   pDemo->dy = calculateDY(pDemo->dy, pDemo->ddy, 30);
    
    pDemo->gpsX = pDemo->gpsX + pDemo->dx * secPerFrame + 1/2 * pDemo->ddx * (pow(48, 2));
    pDemo->gpsY = pDemo->gpsY + pDemo->dy * secPerFrame + 1/2 * pDemo->ddy * (pow(48, 2));
@@ -233,6 +233,9 @@ int main(int argc, char** argv)
       "Demo",   /* name on the window */
       ptUpperRight);
 
+   Test test;
+   test.testRunner();
+   
    // Initialize the demo
    Demo demo(ptUpperRight);
 

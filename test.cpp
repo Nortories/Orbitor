@@ -16,9 +16,12 @@
  * TEST RUNNER
  * Runs all the unit tests
  ****************************************************************/
-void testRunner()
+void Test::testRunner()
 {
    TestPosition().run();
+   cout << "Test Position pass" << endl;
    TestPhysics().run();
+   cout << "Test Physics pass" << endl;
    TestObject().run();
+   cout << "Test Object pass" << endl;
 }
