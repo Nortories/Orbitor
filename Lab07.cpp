@@ -20,6 +20,7 @@
 #include <iomanip>
 #include "physics.h"
 #include "config.h"
+#include "test.h"
 
 #include "game.h"
 
@@ -119,8 +120,35 @@ void callBack(const Interface* pUI, void* p)
 {
    // the first step is to cast the void pointer into a game object. This
    // is the first step of every single callback function in OpenGL. 
-   //Demo* pDemo = (Demo*)p;
-   Game* pGame = (Game*)p;
+   Demo* pDemo = (Demo*)p;
+
+   //
+   // accept input
+   //
+
+   // move by a little
+//   if (pUI->isUp())
+//      pDemo->ptShip.addPixelsY(1.0);
+//   if (pUI->isDown())
+//      pDemo->ptShip.addPixelsY(-1.0);
+//   if (pUI->isLeft())
+//      pDemo->ptShip.addPixelsX(-1.0);
+//   if (pUI->isRight())
+//      pDemo->ptShip.addPixelsX(1.0);
+
+
+   //
+   // perform all the game logic
+   //
+
+   // rotate the earth
+   pDemo->angleEarth += -(2.0 * M_PI / 30.0) * (1440.0 / 86400.0);
+//   pDemo->angleShip += 0.02;
+   pDemo->phaseStar++;
+
+   //
+   // draw everything
+   //
 
    Position pt;
    ogstream gout(pt);
@@ -141,6 +169,7 @@ void callBack(const Interface* pUI, void* p)
    }*/
 
    // draw the earth
+
 //   pt.setMeters(0.0, 0.0);
 //   gout.drawEarth(pt, pDemo->angleEarth);
 //
@@ -157,6 +186,7 @@ void callBack(const Interface* pUI, void* p)
 //
 //   pDemo->ptGPS.setMeters(pDemo->gpsX, pDemo->gpsY);
 //   gout.drawGPS(pDemo->ptGPS, pDemo->angleShip);
+
    
 }
 
@@ -184,7 +214,11 @@ int main(int argc, char** argv)
    Interface ui(0, NULL,
       "Orbitor",   /* name on the window */
       ptUpperRight);
-   Game game(ptUpperRight);
+
+
+   Test test;
+   test.testRunner();
+   
    // Initialize the demo
    Demo demo(ptUpperRight);
 
