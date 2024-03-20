@@ -150,10 +150,10 @@ void callBack(const Interface* pUI, void* p)
    // draw everything
    //
 
-   Position pt;
-   ogstream gout(pt);
+   //Position pt;
+   //ogstream gout(pt);
 
-   pGame->draw(&gout);
+   //pGame->draw(&gout);
 
    //Physics physics;
 
