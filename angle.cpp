@@ -14,7 +14,6 @@ void Angle::normalizeRadians()
 	}
 }
 
-
 void Angle::setRadians(double radians)
 { 
 	this->radians = radians;
