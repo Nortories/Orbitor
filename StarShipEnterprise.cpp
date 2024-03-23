@@ -3,6 +3,16 @@
 #include <math.h>
 #define _USING_MATH_DEFINES
 
+StarShipEnterprise::StarShipEnterprise()
+{
+	cout << "StarShipEnterprise()" << endl;
+	this->velocity = Velocity(DREAM_CHASER_VECTOR_X, DREAM_CHASER_VECTOR_Y);
+	this->position.setPixelsX(DREAM_CHASER_POSITION_X_PX);
+	this->position.setPixelsY(DREAM_CHASER_POSITION_Y_PX);
+	this->radius = DREAM_CHASER_RADIUS;
+	this->thrust = false;
+}
+
 StarShipEnterprise::StarShipEnterprise(const Velocity& vel, const Position& pos, const Angle& ang, float angular)
 {
 	this->velocity = vel;
@@ -46,7 +56,7 @@ Bullet* StarShipEnterprise::fire()
 	return bullet;
 }
 
-list<Part*> StarShipEnterprise::getDebris()
+list<Part*> StarShipEnterprise::getParts()
 {
 	list<Part*> debris;
 	bool addKick = true;

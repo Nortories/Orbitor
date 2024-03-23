@@ -28,9 +28,6 @@
     <Filter Include="Physics">
       <UniqueIdentifier>{6052ae2c-012a-4707-a405-8da05d7efe67}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Satelites\StarShip">
-      <UniqueIdentifier>{c7dcca84-8cae-46fd-bf23-f0511448c125}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Satelites\GPS">
       <UniqueIdentifier>{76db90d5-a061-4452-8c92-eea4a8fe16a0}</UniqueIdentifier>
     </Filter>
@@ -42,6 +39,27 @@
     </Filter>
     <Filter Include="UI">
       <UniqueIdentifier>{56665073-5eb6-4ced-9a3f-0df4e9289526}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Satelites\Hubble">
+      <UniqueIdentifier>{6527d6e4-3ed8-47de-9d65-ce369f531c74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parts\Hubble PARTS">
+      <UniqueIdentifier>{2198a028-dc02-400e-bba6-7b73a65538e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Satelites\Dragon">
+      <UniqueIdentifier>{588f04cc-124b-44f7-ba7f-ca005a844978}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parts\dragon PARTS">
+      <UniqueIdentifier>{8f3ec52f-a5b7-4a51-9298-474d1248a6a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Satelites\starLink">
+      <UniqueIdentifier>{4c27c519-0656-48dd-b488-424bae4572e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parts\StarLink PARTS">
+      <UniqueIdentifier>{265e4e45-e6a2-4ca1-93a6-7ca7861571e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Satelites\DreamChaser">
+      <UniqueIdentifier>{c7dcca84-8cae-46fd-bf23-f0511448c125}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -58,7 +76,7 @@
       <Filter>Physics</Filter>
     </ClCompile>
     <ClCompile Include="StarShipEnterprise.cpp">
-      <Filter>Satelites\StarShip</Filter>
+      <Filter>Satelites\DreamChaser</Filter>
     </ClCompile>
     <ClCompile Include="gps.cpp">
       <Filter>Satelites\GPS</Filter>
@@ -80,6 +98,15 @@
     </ClCompile>
     <ClCompile Include="simulation.h">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hubble.cpp">
+      <Filter>Satelites\Hubble</Filter>
+    </ClCompile>
+    <ClCompile Include="Dragon.cpp">
+      <Filter>Satelites\Dragon</Filter>
+    </ClCompile>
+    <ClCompile Include="starLink.cpp">
+      <Filter>Satelites\starLink</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -114,10 +141,10 @@
       <Filter>Physics</Filter>
     </ClInclude>
     <ClInclude Include="StarShipEnterprise.h">
-      <Filter>Satelites\StarShip</Filter>
+      <Filter>Satelites\DreamChaser</Filter>
     </ClInclude>
     <ClInclude Include="bullet.h">
-      <Filter>Satelites\StarShip</Filter>
+      <Filter>Satelites\DreamChaser</Filter>
     </ClInclude>
     <ClInclude Include="uiInteract.h">
       <Filter>UI</Filter>
@@ -145,6 +172,42 @@
     </ClInclude>
     <ClInclude Include="position.h">
       <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Hubble.h">
+      <Filter>Satelites\Hubble</Filter>
+    </ClInclude>
+    <ClInclude Include="HubbleTelescope.h">
+      <Filter>Parts\Hubble PARTS</Filter>
+    </ClInclude>
+    <ClInclude Include="HubbleComputer.h">
+      <Filter>Parts\Hubble PARTS</Filter>
+    </ClInclude>
+    <ClInclude Include="HubbleLeft.h">
+      <Filter>Parts\Hubble PARTS</Filter>
+    </ClInclude>
+    <ClInclude Include="HubbleRight.h">
+      <Filter>Parts\Hubble PARTS</Filter>
+    </ClInclude>
+    <ClInclude Include="Dragon.h">
+      <Filter>Satelites\Dragon</Filter>
+    </ClInclude>
+    <ClInclude Include="DragonCenter.h">
+      <Filter>Parts\dragon PARTS</Filter>
+    </ClInclude>
+    <ClInclude Include="DragonLeft.h">
+      <Filter>Parts\dragon PARTS</Filter>
+    </ClInclude>
+    <ClInclude Include="DragonRight.h">
+      <Filter>Parts\dragon PARTS</Filter>
+    </ClInclude>
+    <ClInclude Include="starLink.h">
+      <Filter>Satelites\starLink</Filter>
+    </ClInclude>
+    <ClInclude Include="StarLinkBody.h">
+      <Filter>Parts\StarLink PARTS</Filter>
+    </ClInclude>
+    <ClInclude Include="StarLinkArray.h">
+      <Filter>Parts\StarLink PARTS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

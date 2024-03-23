@@ -140,12 +140,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="angle.cpp" />
+    <ClCompile Include="Dragon.cpp" />
     <ClCompile Include="gps.cpp" />
     <ClCompile Include="GPSLeft.h" />
+    <ClCompile Include="Hubble.cpp" />
     <ClCompile Include="simulation.h" />
     <ClCompile Include="SourceFile.cpp" />
     <ClCompile Include="object.cpp" />
     <ClCompile Include="position.cpp" />
+    <ClCompile Include="starLink.cpp" />
     <ClCompile Include="StarShipEnterprise.cpp" />
     <ClCompile Include="sputnik.cpp" />
     <ClCompile Include="test.cpp" />
@@ -156,14 +159,26 @@
     <ClInclude Include="angle.h" />
     <ClInclude Include="bullet.h" />
     <ClInclude Include="config.h" />
+    <ClInclude Include="Dragon.h" />
+    <ClInclude Include="DragonCenter.h" />
+    <ClInclude Include="DragonLeft.h" />
+    <ClInclude Include="DragonRight.h" />
     <ClInclude Include="Earth.h" />
     <ClInclude Include="fragment.h" />
     <ClInclude Include="gps.h" />
     <ClInclude Include="GPSCenter.h" />
     <ClInclude Include="GPSRight.h" />
+    <ClInclude Include="Hubble.h" />
+    <ClInclude Include="HubbleComputer.h" />
+    <ClInclude Include="HubbleLeft.h" />
+    <ClInclude Include="HubbleRight.h" />
+    <ClInclude Include="HubbleTelescope.h" />
     <ClInclude Include="object.h" />
     <ClInclude Include="part.h" />
     <ClInclude Include="position.h" />
+    <ClInclude Include="starLink.h" />
+    <ClInclude Include="StarLinkArray.h" />
+    <ClInclude Include="StarLinkBody.h" />
     <ClInclude Include="StarShipEnterprise.h" />
     <ClInclude Include="sputnik.h" />
     <ClInclude Include="star.h" />

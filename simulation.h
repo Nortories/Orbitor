@@ -16,6 +16,9 @@
 #include "sputnik.h"
 #include "fragment.h"
 #include "gps.h"
+#include "hubble.h"
+#include "dragon.h"
+#include "starLink.h"
 
 
 class Simulation {
@@ -44,11 +47,7 @@ public:
         /*******************************
         /*  Create StarShipEnterprise.
         /******************************/
-
-        Angle ang(0);
-        Velocity vel(0, ang);
-        Position pos(USER_STARTIN_POSITION, USER_STARTIN_POSITION);
-        starShip = new StarShipEnterprise(vel, pos, ang, 0);
+        starShip = new StarShipEnterprise();
 
         /*******************************
         /*  Create Sputnik!
@@ -78,9 +77,22 @@ public:
         /*  Create the Hubble telescope.
         /******************************/
 
+        Hubble* hubble = new Hubble();
+        objects.push_back(hubble);
+
+        /*******************************
+        /*  Create Crew Dragon
+        /******************************/
+
+        Dragon* dragon = new Dragon();
+        objects.push_back(dragon);
+
         /*******************************
         /*  Create StarLink satellite.
         /******************************/
+
+        StarLink* starLink = new StarLink();
+        objects.push_back(starLink);
 
     };
 

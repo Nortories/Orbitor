@@ -5,16 +5,7 @@
 class StarShipEnterprise : public Object
 {
 public:
-	StarShipEnterprise()
-	{
-		this->velocity = Velocity();
-		this->position = Position(21082000, 36515095.125);
-		this->angle = Angle();
-		this->angularVelocity = 0.00;
-		this->dead = false;
-		this->radius = 5.00;
-		this->thrust = false;
-	};
+	StarShipEnterprise();
 	StarShipEnterprise(const Velocity& vel, const Position& pos, const Angle& ang, float angular);
 	void draw(ogstream* gout)
 	{
@@ -29,6 +20,6 @@ public:
 
 private:
 	bool thrust;
-	list<Part*> getDebris();
+	list<Part*> getParts();
 };
 

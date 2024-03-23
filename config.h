@@ -1,14 +1,7 @@
 #pragma once
 
-
-//replace
-#define secPerFrame 48 // 1 sec of simulation time is 48 sec of real time
-#define geoDistance 42164000 // how far needs to be from the Earth
-#define heightGravity -0.2244 // gravity for the GPS
-#define geoSpeed 3100
-
+// General
 #define GRAVITY -9.8067
-#define PROJECTILE_SPEED 1000.0
 #define HOURS_DAY 24
 #define FPS 48
 #define SPEED_OF_LIGHT 299792458.0
@@ -19,21 +12,64 @@
 #define SECONDS_PER_DAY 86400
 #define FRAME_RATE 30
 #define STARS 1000
-#define USER_STARTIN_POSITION 36515095.0
 #define EARTH_SPIN_SPEED -0.00349066
 #define ZOOM 128000.0
-#define BULLET_RANGE 100
-#define BULLET_SPEED 10000.0
+
+// Fragments
 #define FRAGMENT_TIME_MIN 50
 #define FRAGMENT_TIME_MAX 100
 
-#define SPUTNIK_RADIUS 4
-// Sputnik start position and vector
+// Dream Chaser
+#define DREAM_CHASER_POSITION_X_PX -450.0
+#define DREAM_CHASER_POSITION_Y_PX 450.0
+#define DREAM_CHASER_VECTOR_X 0.0
+#define DREAM_CHASER_VECTOR_Y -2000.0
+#define DREAM_CHASER_RADIUS 5
+#define BULLET_RANGE 70
+#define BULLET_SPEED 9000.0
+
+// Sputnik
 #define SPUTNIK_POSITION_X -36515095.13
 #define SPUTNIK_POSITION_Y 21082000.0
 #define SPUTNIK_VECTOR_X 2050.0
 #define SPUTNIK_VECTOR_Y 2684.68
+#define SPUTNIK_RADIUS 4
 
+//Hubble
+#define HUBBLE_POSITION_X 0.0
+#define HUBBLE_POSITION_Y -42164000.0
+#define HUBBLE_VECTOR_X 3100.0
+#define HUBBLE_VECTOR_Y 0.0
+#define HUBBLE_RADIUS 10
+
+// Hubble Parts
+#define HUBBLE_TELESCOPE_RADIUS 10
+#define HUBBLE_COMPUTER_RADIUS 7
+#define HUBBLE_LEFT_RADIUS 8
+#define HUBBLE_RIGHT_RADIUS 8
+
+// Crew Dragon
+#define DRAGON_POSITION_X 0.0
+#define DRAGON_POSITION_Y 8000000.0
+#define DRAGON_VECTOR_X -7900.0
+#define DRAGON_VECTOR_Y 0.0
+#define DRAGON_RADIUS 7
+
+// Crew Dragon Parts
+#define DRAGON_LEFT_RADIUS 6
+#define DRAGON_RIGHT_RADIUS 6
+#define DRAGON_CENTER_RADIUS 6
+
+// StarLink
+#define STARLINK_POSITION_X 0.0
+#define STARLINK_POSITION_Y -13020000.0
+#define STARLINK_VECTOR_X 5800.0
+#define STARLINK_VECTOR_Y 0.0
+#define STARLINK_RADIUS 6
+
+// StarLink Parts
+#define STARLINK_BODY_RADIUS 2
+#define STARLINK_ARRAYT_RADIUS 4
 
 // GPS STARTING POSTIONS
 #define GPS_RADIUS 12
@@ -72,3 +108,8 @@
 #define GPS6_POSITION_Y  13280000
 #define GPS6_VECTOR_X -1940 
 #define GPS6_VECTOR_Y -3360.18
+
+//GPS PARTS
+#define GPS_CENTER_RADIUS 7
+#define GPS_RIGHT_RADIUS 8
+#define GPS_LEFT_RADIUS 8

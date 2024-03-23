@@ -1,4 +1,4 @@
-﻿  GPSLeft.h
+﻿  Dragon.cpp
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(85,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(90,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(91,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
@@ -10,7 +10,7 @@ C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(151,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(153,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\part.h(13,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  SourceFile.cpp
+  GPSLeft.h
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(85,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(90,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(91,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
@@ -22,14 +22,18 @@ C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(151,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(153,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\part.h(13,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(64,78): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(64,29): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(65,78): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(65,29): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(67,78): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(67,29): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(68,78): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(68,29): warning C4305: 'argument': truncation from 'double' to 'float'
+  Hubble.cpp
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(85,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(90,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(91,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(97,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(98,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(111,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(130,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(131,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(151,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(153,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\part.h(13,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   StarShipEnterprise.cpp
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\Object.h(85,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\Object.h(90,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
@@ -67,7 +71,6 @@ C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(153,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\part.h(13,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.cpp(17,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  position.cpp
   simulation.h
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(85,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(90,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
@@ -80,15 +83,27 @@ C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(151,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(153,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\part.h(13,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(63,78): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(63,29): warning C4305: 'argument': truncation from 'double' to 'float'
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(64,78): warning C4305: 'argument': truncation from 'double' to 'float'
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(64,29): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(65,78): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(65,29): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(66,78): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(66,29): warning C4305: 'argument': truncation from 'double' to 'float'
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(67,78): warning C4305: 'argument': truncation from 'double' to 'float'
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(67,29): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(68,78): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\simulation.h(68,29): warning C4305: 'argument': truncation from 'double' to 'float'
   sputnik.cpp
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(85,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(90,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(91,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(97,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(98,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(111,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(130,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(131,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(151,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(153,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\part.h(13,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  starLink.cpp
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(85,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(90,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\object.h(91,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
@@ -114,7 +129,5 @@ C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testObject.h(143,18): warning C4305: 'argument': truncation from 'double' to 'float'
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testObject.h(175,18): warning C4305: 'argument': truncation from 'double' to 'float'
 C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\testObject.h(206,18): warning C4305: 'argument': truncation from 'double' to 'float'
-  uiDraw.cpp
-  uiInteract.cpp
   Generating Code...
   Lab07.vcxproj -> C:\Users\sooae\Documents\Github Repos\Winter 2024\.Winter 2024 Inheritance\Orbit-Prototype\Orbitor\x64\Debug\Lab07.exe
