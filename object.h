@@ -33,19 +33,6 @@ public:
 		this->mass = 0;
 	}
 
-	//everything constructor
-	Object(string type, Velocity velocity, Position position, Angle angle, float radius, float angularVelocity, int hitPoints, float mass) {
-		this->type = type;
-		this->velocity = velocity;
-		this->position = position;
-		this->angle = angle;
-		this->radius = radius;
-		this->angularVelocity = angularVelocity;
-		this->hitPoints = hitPoints;
-		this->mass = mass;
-	}
-
-
 	//getters
 	string getType() const { return type; }
 	Velocity getVelocity() const { return velocity; }
@@ -55,7 +42,7 @@ public:
 	float getAngularVelocity() const { return angularVelocity; }
 	int getHitPoints() const { return hitPoints; }
 	float getMass() const { return mass; }
-	bool isDead() const { return dead; }
+	bool isDead() const { return selfDestruct; }
 
 
 	//setters
@@ -65,7 +52,7 @@ public:
 	void setAngle(Angle angle) { this->angle = angle; }
 	void setRadius(float radius) { this->radius = radius; }
 	void setAngularVelocity(float angularVelocity) { this->angularVelocity = angularVelocity; }
-	void setIsddead(bool destroyed) { this->dead = destroyed; }
+	void setIsddead(bool destroyed) { this->selfDestruct = destroyed; }
 	void setHitPoints(int hitPoints) { this->hitPoints = hitPoints; }
 	void setMass(float mass) { this->mass = mass; }
 
@@ -76,7 +63,7 @@ public:
 
 	void triggerDestruction() 
 	{
-		dead = true; }
+		selfDestruct = true; }
 
 	virtual void explode(list<Object*>* objList);
 
@@ -106,7 +93,8 @@ public:
 		update(FPS, newGravity);
 		angle.rotate(this->angularVelocity);
 	}
-	bool hit(Object* obj)
+
+	bool isHit(Object* obj)
 	{
 		float distance = sqrt((position.getMetersX() - obj->position.getMetersX()) * (position.getMetersX() - obj->position.getMetersX()) +
 			(position.getMetersY() - obj->position.getMetersY()) * (position.getMetersY() - obj->position.getMetersY()));
@@ -116,7 +104,7 @@ public:
 			this->hitPoints--;
 			if (this->hitPoints <= 0)
 			{
-				this->dead = true;
+				this->selfDestruct = true;
 			}
 			return true;
 		}
@@ -125,7 +113,8 @@ public:
 			return false;
 		}
 	}
-	bool crashOnEarth()
+
+	bool crashedOnEarth()
 	{
 		float distance = sqrt(position.getMetersX() * position.getMetersX() + position.getMetersY() * position.getMetersY());
 		float radii = (radius + ZOOM) + RADIUS_OF_EARTH;
@@ -141,10 +130,9 @@ public:
 
 
 protected:
-	//member functions
-
 	// Use this function to set each child class's parts 
 	virtual list<Part*> getPartPieces();
+	
 	float getGravity(const Position& pos)
 	{
 		// First get the height from earth.
@@ -165,8 +153,6 @@ protected:
 	};
 
 
-
-
 	//member variables
 	string type = "none";
 	Velocity velocity;
@@ -176,6 +162,6 @@ protected:
 	float angularVelocity;
 	int hitPoints = 1;
 	float mass;
-	bool dead = false;
+	bool selfDestruct = false;
 
 };

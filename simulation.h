@@ -140,12 +140,12 @@ public:
                 auto& obj1 = *object1;
                 auto& obj2 = *object2;
 
-                if (obj1->hit(obj2))
+                if (obj1->isHit(obj2))
                 {
                     deleteList.push_back(obj1);
                     deleteList.push_back(obj2);
                 }
-                if (obj2->crashOnEarth())
+                if (obj2->crashedOnEarth())
                 {
                     deleteList.push_back(obj2);
                 }
@@ -155,13 +155,13 @@ public:
             if (starShip != nullptr) {
                 if (starShip->isDead() == false) {
 
-                    if (starShip->hit(*object1))
+                    if (starShip->isHit(*object1))
                     {
                         deleteList.push_back(*object1);
                         starShip->triggerDestruction();
                     }
 
-                    if (starShip->crashOnEarth()) // TODO: If there is only one object in the Sim list this will never trigger. Josh S March 22,2024
+                    if (starShip->crashedOnEarth()) // TODO: If there is only one object in the Sim list this will never trigger. Josh S March 22,2024
                     {
                         cout << "Ship has crashed on Earth" << endl;
                         starShip->triggerDestruction();

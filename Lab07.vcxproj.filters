@@ -119,9 +119,6 @@
     <ClInclude Include="testPosition.h">
       <Filter>Tests</Filter>
     </ClInclude>
-    <ClInclude Include="testGame.h">
-      <Filter>Tests</Filter>
-    </ClInclude>
     <ClInclude Include="testObject.h">
       <Filter>Tests</Filter>
     </ClInclude>

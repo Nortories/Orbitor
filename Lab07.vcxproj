@@ -183,7 +183,6 @@
     <ClInclude Include="sputnik.h" />
     <ClInclude Include="star.h" />
     <ClInclude Include="test.h" />
-    <ClInclude Include="testGame.h" />
     <ClInclude Include="testObject.h" />
     <ClInclude Include="testPosition.h" />
     <ClInclude Include="uiDraw.h" />

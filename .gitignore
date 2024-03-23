@@ -112,3 +112,5 @@ Module.symvers
 Mkfile.old
 dkms.conf
 *v17/
+*Debug/
+*x64/

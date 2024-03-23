@@ -66,29 +66,6 @@ private:
 	}
 
 //	/***************************************************
-//	 *	Test Object set constructor
-//	 ***************************************************/
-	void testConstructorNonDefault() const {
-		//setup
-
-		//exercise string type, Velocity velocity, Position position, Angle angle, float radius, float angularVelocity, bool destroyed, int hitPoints, float mass
-		Object obj("gps", Velocity(5, 5), Position(1.0, 1.0), Angle(90), 3, 5, 1, 100);
-		//verify
-		assert(obj.getType() == "gps");
-		assert(obj.getVelocity().getDx() == 5.0);
-		assert(obj.getVelocity().getDy() == 5.0);
-		assert(obj.getPosition().getMetersX() == 1.0);
-		assert(obj.getPosition().getMetersY() == 1.0);
-		assert(obj.getAngle().getDegrees() == 90.0);
-		assert(obj.getRadius() == 90.0);
-		assert(obj.getAngularVelocity() == 3.0);
-		assert(obj.getHitPoints() == 1);
-		assert(obj.getMass() == 100);
-		//teardown
-		cout << "Constructor non default test passed" << endl;
-	}
-
-//	/***************************************************
 //	* Test Object setters, object has member variables:
 //	***************************************************/
 	void testSetters() const {
@@ -233,18 +210,18 @@ private:
 
 		//verify setup
 		//exercise
-		assert(obj1.hit(&obj2) == true);
-		assert(obj1.hit(&obj3) == true);
-		assert(obj2.hit(&obj3) == true);
-		assert(obj2.hit(&obj1) == true);
-		assert(obj3.hit(&obj1) == true);
-		assert(obj3.hit(&obj2) == true);
-		assert(obj1.hit(&obj4) == false);
-		assert(obj2.hit(&obj4) == false);
-		assert(obj3.hit(&obj4) == false);
-		assert(obj4.hit(&obj1) == false);
-		assert(obj4.hit(&obj2) == false);
-		assert(obj4.hit(&obj3) == false);
+		assert(obj1.isHit(&obj2) == true);
+		assert(obj1.isHit(&obj3) == true);
+		assert(obj2.isHit(&obj3) == true);
+		assert(obj2.isHit(&obj1) == true);
+		assert(obj3.isHit(&obj1) == true);
+		assert(obj3.isHit(&obj2) == true);
+		assert(obj1.isHit(&obj4) == false);
+		assert(obj2.isHit(&obj4) == false);
+		assert(obj3.isHit(&obj4) == false);
+		assert(obj4.isHit(&obj1) == false);
+		assert(obj4.isHit(&obj2) == false);
+		assert(obj4.isHit(&obj3) == false);
 
 		cout << "Collision test passed" << endl;
 		//verify exercise
@@ -345,22 +322,22 @@ private:
 		assert(obj2.getHitPoints() == 1);
 		assert(obj3.getHitPoints() == 1);
 		assert(obj4.getHitPoints() == 1);
-		assert(obj1.hit(&obj2) == true);
-		assert(obj1.hit(&obj3) == true);
-		assert(obj2.hit(&obj3) == true);
-		assert(obj2.hit(&obj1) == true);
-		assert(obj3.hit(&obj1) == true);
-		assert(obj3.hit(&obj2) == true);
-		assert(obj1.hit(&obj4) == false);
-		assert(obj2.hit(&obj4) == false);
-		assert(obj3.hit(&obj4) == false);
-		assert(obj4.hit(&obj1) == false);
-		assert(obj4.hit(&obj2) == false);
-		assert(obj4.hit(&obj3) == false);
+		assert(obj1.isHit(&obj2) == true);
+		assert(obj1.isHit(&obj3) == true);
+		assert(obj2.isHit(&obj3) == true);
+		assert(obj2.isHit(&obj1) == true);
+		assert(obj3.isHit(&obj1) == true);
+		assert(obj3.isHit(&obj2) == true);
+		assert(obj1.isHit(&obj4) == false);
+		assert(obj2.isHit(&obj4) == false);
+		assert(obj3.isHit(&obj4) == false);
+		assert(obj4.isHit(&obj1) == false);
+		assert(obj4.isHit(&obj2) == false);
+		assert(obj4.isHit(&obj3) == false);
 		//exercise
-		obj1.hit(&obj2);
-		obj2.hit(&obj1);
-		obj4.hit(&obj1);
+		obj1.isHit(&obj2);
+		obj2.isHit(&obj1);
+		obj4.isHit(&obj1);
 
 		//verify exercise
 

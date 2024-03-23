@@ -20,7 +20,7 @@ StarShipEnterprise::StarShipEnterprise(const Velocity& vel, const Position& pos,
 	this->angle = ang;
 	this->angularVelocity = 0.00;
 	this->angularVelocity = angular;
-	this->dead = false;
+	this->selfDestruct = false;
 	this->radius = 5.00;
 	this->thrust = false;
 }
