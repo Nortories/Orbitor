@@ -142,6 +142,7 @@
     <ClCompile Include="angle.cpp" />
     <ClCompile Include="gps.cpp" />
     <ClCompile Include="GPSLeft.h" />
+    <ClCompile Include="simulation.h" />
     <ClCompile Include="SourceFile.cpp" />
     <ClCompile Include="object.cpp" />
     <ClCompile Include="position.cpp" />

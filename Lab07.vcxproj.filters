@@ -78,6 +78,9 @@
     <ClCompile Include="uiDraw.cpp">
       <Filter>UI</Filter>
     </ClCompile>
+    <ClCompile Include="simulation.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="object.h">

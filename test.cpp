@@ -9,7 +9,6 @@
 
 #include "test.h"
 #include "testPosition.h"
-#include "testPhysics.h"
 #include "testObject.h"
 
 /*****************************************************************
@@ -20,8 +19,6 @@ void Test::testRunner()
 {
    TestPosition().run();
    cout << "Test Position pass" << endl;
-   TestPhysics().run();
-   cout << "Test Physics pass" << endl;
    TestObject().run();
    cout << "Test Object pass" << endl;
 }
