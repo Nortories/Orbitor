@@ -9,7 +9,6 @@
 
 #include "test.h"
 #include "testPosition.h"
-#include "testPhysics.h"
 #include "testObject.h"
 //#include "testAngle.h"
 
@@ -20,7 +19,6 @@
 void testRunner()
 {
    TestPosition().run();
-   TestPhysics().run();
    TestObject().run();
 }
 

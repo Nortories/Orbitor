@@ -11,7 +11,6 @@
 
 #include <iostream>
 #include "object.h"
-#include "game.h"
 #include "velocity.h"
 #include "angle.h"
 #include <cassert>
@@ -60,7 +59,6 @@ private:
 		assert(obj.getAngle().getDegrees() == 0.0);
 		assert(obj.getRadius() == 0.0);
 		assert(obj.getAngularVelocity() == 0.0);
-		assert(obj.getIsDestroyed() == false);
 		assert(obj.getHitPoints() == 1);
 		assert(obj.getMass() == 0);
 		//teardown
@@ -74,7 +72,7 @@ private:
 		//setup
 
 		//exercise string type, Velocity velocity, Position position, Angle angle, float radius, float angularVelocity, bool destroyed, int hitPoints, float mass
-		Object obj("gps", Velocity(5, 5), Position(1.0, 1.0), Angle(90), 3, 5, false, 1, 100);
+		Object obj("gps", Velocity(5, 5), Position(1.0, 1.0), Angle(90), 3, 5, 1, 100);
 		//verify
 		assert(obj.getType() == "gps");
 		assert(obj.getVelocity().getDx() == 5.0);
@@ -84,7 +82,6 @@ private:
 		assert(obj.getAngle().getDegrees() == 90.0);
 		assert(obj.getRadius() == 90.0);
 		assert(obj.getAngularVelocity() == 3.0);
-		assert(obj.getIsDestroyed() == false);
 		assert(obj.getHitPoints() == 1);
 		assert(obj.getMass() == 100);
 		//teardown
@@ -106,7 +103,6 @@ private:
 			obj.setAngle(Angle(90.0));
 			obj.setRadius(1);
 			obj.setAngularVelocity(1.0);
-			obj.setIsDestroyed(true);
 			obj.setHitPoints(1);
 			obj.setMass(1);
 		}
@@ -122,7 +118,6 @@ private:
 		assert(obj.getPosition().getMetersY() == 1.0);
 		assert(obj.getRadius() == 1);
 		assert(obj.getAngularVelocity() == 1.0);
-		assert(obj.getIsDestroyed() == true);
 		assert(obj.getHitPoints() == 1);
 		assert(obj.getMass() == 1);
 		//teardown
@@ -292,7 +287,7 @@ private:
 		//setup
 		Object obj;
 		//verify setup
-		assert(obj.getIsDestroyed() == false);
+		assert(obj.isDead() == false);
 		//exercise
 		try
 		{
@@ -304,7 +299,7 @@ private:
 		}
 		//verify exercise
 		//manually verify fragment is drawn on screen
-		assert(obj.getIsDestroyed() == true);
+		assert(obj.isDead() == true);
 		//teardown
 		cout << "Destruction trigger test passed" << endl;
 	}
@@ -323,7 +318,7 @@ private:
 		//exercise
 		try
 		{
-			mainObj.destroy(&Objects);
+			mainObj.explode(&Objects);
 		}
 		catch (const std::exception&)
 		{

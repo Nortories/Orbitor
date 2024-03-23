@@ -13,81 +13,135 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Satelites">
+      <UniqueIdentifier>{871bbab2-ce98-403b-b9ad-3f41e4342446}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parts">
+      <UniqueIdentifier>{f1abc2ba-b2ba-41cb-bc7a-04e8fd12becd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parts\GPS PARTS">
+      <UniqueIdentifier>{5d668517-46f8-4ab3-96fb-90826ea57442}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{33824932-3471-4a05-b2a9-12419cbfadd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physics">
+      <UniqueIdentifier>{6052ae2c-012a-4707-a405-8da05d7efe67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Satelites\StarShip">
+      <UniqueIdentifier>{c7dcca84-8cae-46fd-bf23-f0511448c125}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Satelites\GPS">
+      <UniqueIdentifier>{76db90d5-a061-4452-8c92-eea4a8fe16a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Satelites\Sputnik">
+      <UniqueIdentifier>{82d5a5b3-ea35-4d93-809b-6e0a2f95aae9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assests">
+      <UniqueIdentifier>{25a93746-a9bf-40d0-ae54-0504c5bf6d0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{56665073-5eb6-4ced-9a3f-0df4e9289526}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Lab07.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="test.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="uiDraw.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="uiInteract.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="position.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="angle.cpp">
+    <ClCompile Include="SourceFile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GPSLeft.h">
+      <Filter>Parts\GPS PARTS</Filter>
+    </ClCompile>
+    <ClCompile Include="angle.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="StarShipEnterprise.cpp">
+      <Filter>Satelites\StarShip</Filter>
+    </ClCompile>
+    <ClCompile Include="gps.cpp">
+      <Filter>Satelites\GPS</Filter>
+    </ClCompile>
+    <ClCompile Include="sputnik.cpp">
+      <Filter>Satelites\Sputnik</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="position.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="uiInteract.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="uiDraw.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="test.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="testPosition.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="uiDraw.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="uiInteract.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="position.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="object.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="fragments.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="testGame.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="projectile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="angle.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="testPosition.h">
+      <Filter>Tests</Filter>
     </ClInclude>
-    <ClInclude Include="velocity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="part.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="physics.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="testGame.h">
+      <Filter>Tests</Filter>
     </ClInclude>
     <ClInclude Include="testObject.h">
-      <Filter>Header Files</Filter>
+      <Filter>Tests</Filter>
     </ClInclude>
-    <ClInclude Include="testPhysics.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="test.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="GPSRight.h">
+      <Filter>Parts\GPS PARTS</Filter>
+    </ClInclude>
+    <ClInclude Include="GPSCenter.h">
+      <Filter>Parts\GPS PARTS</Filter>
+    </ClInclude>
+    <ClInclude Include="velocity.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="angle.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="StarShipEnterprise.h">
+      <Filter>Satelites\StarShip</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>Satelites\StarShip</Filter>
+    </ClInclude>
+    <ClInclude Include="uiInteract.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="uiDraw.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="fragment.h">
+      <Filter>Parts</Filter>
+    </ClInclude>
+    <ClInclude Include="gps.h">
+      <Filter>Satelites\GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="sputnik.h">
+      <Filter>Satelites\Sputnik</Filter>
+    </ClInclude>
+    <ClInclude Include="part.h">
+      <Filter>Parts</Filter>
+    </ClInclude>
+    <ClInclude Include="star.h">
+      <Filter>Assests</Filter>
+    </ClInclude>
+    <ClInclude Include="Earth.h">
+      <Filter>Assests</Filter>
+    </ClInclude>
+    <ClInclude Include="position.h">
+      <Filter>Physics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

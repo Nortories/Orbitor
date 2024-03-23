@@ -16,7 +16,7 @@ class Object
 {
 public:
 	//default constructor
-	Object() : angle(0), radius(0), angularVelocity(0), destroyed(false), hitPoints(1), mass(0) {
+	Object() : angle(0), radius(0), angularVelocity(0), hitPoints(1), mass(0) {
 		this->velocity = Velocity(0, 0);
 		this->position = Position(0, 0);
 	}
@@ -29,20 +29,18 @@ public:
 		this->angle = angle;
 		this->radius = 0;
 		this->angularVelocity = 0;
-		this->destroyed = false;
 		this->hitPoints = 1;
 		this->mass = 0;
 	}
 
 	//everything constructor
-	Object(string type, Velocity velocity, Position position, Angle angle, float radius, float angularVelocity, bool destroyed, int hitPoints, float mass) {
+	Object(string type, Velocity velocity, Position position, Angle angle, float radius, float angularVelocity, int hitPoints, float mass) {
 		this->type = type;
 		this->velocity = velocity;
 		this->position = position;
 		this->angle = angle;
 		this->radius = radius;
 		this->angularVelocity = angularVelocity;
-		this->destroyed = destroyed;
 		this->hitPoints = hitPoints;
 		this->mass = mass;
 	}
@@ -55,9 +53,9 @@ public:
 	Angle getAngle() const { return angle; }
 	float getRadius() const { return radius; }
 	float getAngularVelocity() const { return angularVelocity; }
-	bool getIsDestroyed() const { return destroyed; }
 	int getHitPoints() const { return hitPoints; }
 	float getMass() const { return mass; }
+	bool isDead() const { return dead; }
 
 
 	//setters
@@ -67,7 +65,7 @@ public:
 	void setAngle(Angle angle) { this->angle = angle; }
 	void setRadius(float radius) { this->radius = radius; }
 	void setAngularVelocity(float angularVelocity) { this->angularVelocity = angularVelocity; }
-	void setIsDestroyed(bool destroyed) { this->destroyed = destroyed; }
+	void setIsddead(bool destroyed) { this->dead = destroyed; }
 	void setHitPoints(int hitPoints) { this->hitPoints = hitPoints; }
 	void setMass(float mass) { this->mass = mass; }
 
@@ -77,9 +75,10 @@ public:
 	}
 
 	void triggerDestruction() 
-	{ destroyed = true; }
+	{
+		dead = true; }
 
-	virtual void destroy(list<Object*>* objList);
+	virtual void explode(list<Object*>* objList);
 
 	void update(float time, float gravity) {
 		// update the velocity of the object
@@ -101,10 +100,10 @@ public:
 		position.setMetersY(newY);
 	}
 
-	void move()
+	void updatePosition()
 	{
-		float aGravity = getGravity(position);
-		update(aGravity, FPS);
+		float newGravity = getGravity(position);
+		update(FPS, newGravity);
 		angle.rotate(this->angularVelocity);
 	}
 	bool hit(Object* obj)
@@ -115,6 +114,10 @@ public:
 		if (distance <= hitBox)
 		{
 			this->hitPoints--;
+			if (this->hitPoints <= 0)
+			{
+				this->dead = true;
+			}
 			return true;
 		}
 		else
@@ -122,11 +125,10 @@ public:
 			return false;
 		}
 	}
-	bool earthCrash()
+	bool crashOnEarth()
 	{
-		float distance = sqrt((position.getMetersX() - 0) * (position.getMetersX() - 0) +
-			(position.getMetersY() - 0) * (position.getMetersY() - 0));
-		float radii = (radius + 128000) + RADIUS_OF_EARTH;
+		float distance = sqrt(position.getMetersX() * position.getMetersX() + position.getMetersY() * position.getMetersY());
+		float radii = (radius + ZOOM) + RADIUS_OF_EARTH;
 		if (distance < radii)
 		{
 			return true;
@@ -140,13 +142,16 @@ public:
 
 protected:
 	//member functions
+
+	// Use this function to set each child class's parts 
+	virtual list<Part*> getPartPieces();
 	float getGravity(const Position& pos)
 	{
 		// First get the height from earth.
 		float height = sqrt((pos.getMetersX() * pos.getMetersX()) + (pos.getMetersY() * pos.getMetersY())) - RADIUS_OF_EARTH;
 		// Then calculate the gravity at that height.
-		float gravity = GRAVITY * ((RADIUS_OF_EARTH / (RADIUS_OF_EARTH + height)) * (RADIUS_OF_EARTH / (RADIUS_OF_EARTH + height)));
-		return gravity;
+		float newGravity = GRAVITY * ((RADIUS_OF_EARTH / (RADIUS_OF_EARTH + height)) * (RADIUS_OF_EARTH / (RADIUS_OF_EARTH + height)));
+		return newGravity;
 	};
 
 	Angle getDirection() const
@@ -159,7 +164,6 @@ protected:
 		return Angle(atan2(position.getMetersX(), position.getMetersY()));
 	};
 
-	virtual list<Part*> getParts();
 
 
 
@@ -170,8 +174,8 @@ protected:
 	Angle angle;
 	float radius;
 	float angularVelocity;
-	bool destroyed;
 	int hitPoints = 1;
 	float mass;
+	bool dead = false;
 
 };
