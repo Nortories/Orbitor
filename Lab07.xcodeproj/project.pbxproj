@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15FEAFC32BB486ED00884713 /* angle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFAE2BB486E600884713 /* angle.cpp */; };
+		15FEAFC42BB486F400884713 /* Dragon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFA42BB486E600884713 /* Dragon.cpp */; };
+		15FEAFC52BB486F700884713 /* gps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFC22BB486E600884713 /* gps.cpp */; };
+		15FEAFC62BB486FA00884713 /* Hubble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFBA2BB486E600884713 /* Hubble.cpp */; };
+		15FEAFC72BB486FD00884713 /* object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFA52BB486E600884713 /* object.cpp */; };
+		15FEAFC82BB4870000884713 /* SourceFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFAA2BB486E600884713 /* SourceFile.cpp */; };
+		15FEAFC92BB4870200884713 /* sputnik.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFC12BB486E600884713 /* sputnik.cpp */; };
+		15FEAFCA2BB4870600884713 /* starLink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFA22BB486E600884713 /* starLink.cpp */; };
+		15FEAFCB2BB4870A00884713 /* StarShipEnterprise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFA72BB486E600884713 /* StarShipEnterprise.cpp */; };
 		C11C7EA425780B2100EA4B2E /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C11C7EA225780B2100EA4B2E /* GLUT.framework */; };
 		C11C7EA525780B2100EA4B2E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C11C7EA325780B2100EA4B2E /* OpenGL.framework */; };
-		C11C7EB125780B6500EA4B2E /* Lab07.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C11C7EA625780B5C00EA4B2E /* Lab07.cpp */; };
 		C11C7EB225780B6500EA4B2E /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C11C7EA725780B5C00EA4B2E /* test.cpp */; };
 		C11C7EB325780B6500EA4B2E /* uiInteract.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C11C7EA925780B5E00EA4B2E /* uiInteract.cpp */; };
 		C11C7EB525780B6500EA4B2E /* uiDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C11C7EAD25780B6000EA4B2E /* uiDraw.cpp */; };
@@ -29,11 +37,48 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		152D004A2B958708000D8D1E /* physics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = physics.h; sourceTree = "<group>"; };
+		15FEAF9C2BB486E600884713 /* DragonCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragonCenter.h; sourceTree = "<group>"; };
+		15FEAF9D2BB486E600884713 /* velocity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = velocity.h; sourceTree = "<group>"; };
+		15FEAF9E2BB486E600884713 /* Earth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Earth.h; sourceTree = "<group>"; };
+		15FEAF9F2BB486E600884713 /* DragonRight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragonRight.h; sourceTree = "<group>"; };
+		15FEAFA02BB486E600884713 /* DragonLeft.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DragonLeft.h; sourceTree = "<group>"; };
+		15FEAFA12BB486E600884713 /* object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = object.h; sourceTree = "<group>"; };
+		15FEAFA22BB486E600884713 /* starLink.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = starLink.cpp; sourceTree = "<group>"; };
+		15FEAFA32BB486E600884713 /* StarLinkBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarLinkBody.h; sourceTree = "<group>"; };
+		15FEAFA42BB486E600884713 /* Dragon.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Dragon.cpp; sourceTree = "<group>"; };
+		15FEAFA52BB486E600884713 /* object.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = object.cpp; sourceTree = "<group>"; };
+		15FEAFA62BB486E600884713 /* StarLinkArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarLinkArray.h; sourceTree = "<group>"; };
+		15FEAFA72BB486E600884713 /* StarShipEnterprise.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StarShipEnterprise.cpp; sourceTree = "<group>"; };
+		15FEAFA82BB486E600884713 /* HubbleLeft.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HubbleLeft.h; sourceTree = "<group>"; };
+		15FEAFA92BB486E600884713 /* GPSCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPSCenter.h; sourceTree = "<group>"; };
+		15FEAFAA2BB486E600884713 /* SourceFile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SourceFile.cpp; sourceTree = "<group>"; };
+		15FEAFAB2BB486E600884713 /* fragment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fragment.h; sourceTree = "<group>"; };
+		15FEAFAC2BB486E600884713 /* GPSRight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPSRight.h; sourceTree = "<group>"; };
+		15FEAFAD2BB486E600884713 /* Hubble.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hubble.h; sourceTree = "<group>"; };
+		15FEAFAE2BB486E600884713 /* angle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = angle.cpp; sourceTree = "<group>"; };
+		15FEAFAF2BB486E600884713 /* angle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = angle.h; sourceTree = "<group>"; };
+		15FEAFB02BB486E600884713 /* part.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = part.h; sourceTree = "<group>"; };
+		15FEAFB12BB486E600884713 /* StarShipEnterprise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarShipEnterprise.h; sourceTree = "<group>"; };
+		15FEAFB22BB486E600884713 /* HubbleTelescope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HubbleTelescope.h; sourceTree = "<group>"; };
+		15FEAFB32BB486E600884713 /* HubbleComputer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HubbleComputer.h; sourceTree = "<group>"; };
+		15FEAFB42BB486E600884713 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		15FEAFB52BB486E600884713 /* HubbleRight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HubbleRight.h; sourceTree = "<group>"; };
+		15FEAFB62BB486E600884713 /* starLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = starLink.h; sourceTree = "<group>"; };
+		15FEAFB72BB486E600884713 /* bullet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bullet.h; sourceTree = "<group>"; };
+		15FEAFB82BB486E600884713 /* stars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stars.h; sourceTree = "<group>"; };
+		15FEAFB92BB486E600884713 /* Dragon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dragon.h; sourceTree = "<group>"; };
+		15FEAFBA2BB486E600884713 /* Hubble.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Hubble.cpp; sourceTree = "<group>"; };
+		15FEAFBB2BB486E600884713 /* gps.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gps.h; sourceTree = "<group>"; };
+		15FEAFBC2BB486E600884713 /* sputnik.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sputnik.h; sourceTree = "<group>"; };
+		15FEAFBD2BB486E600884713 /* testObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testObject.h; sourceTree = "<group>"; };
+		15FEAFBE2BB486E600884713 /* GPSLeft.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPSLeft.h; sourceTree = "<group>"; };
+		15FEAFBF2BB486E600884713 /* star.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = star.h; sourceTree = "<group>"; };
+		15FEAFC02BB486E600884713 /* simulation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simulation.h; sourceTree = "<group>"; };
+		15FEAFC12BB486E600884713 /* sputnik.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sputnik.cpp; sourceTree = "<group>"; };
+		15FEAFC22BB486E600884713 /* gps.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gps.cpp; sourceTree = "<group>"; };
 		C11C7E962578098A00EA4B2E /* Lab07 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab07; sourceTree = BUILT_PRODUCTS_DIR; };
 		C11C7EA225780B2100EA4B2E /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		C11C7EA325780B2100EA4B2E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		C11C7EA625780B5C00EA4B2E /* Lab07.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lab07.cpp; sourceTree = "<group>"; };
 		C11C7EA725780B5C00EA4B2E /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
 		C11C7EA825780B5C00EA4B2E /* uiInteract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uiInteract.h; sourceTree = "<group>"; };
 		C11C7EA925780B5E00EA4B2E /* uiInteract.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uiInteract.cpp; sourceTree = "<group>"; };
@@ -61,10 +106,47 @@
 		C11C7E8D2578098A00EA4B2E = {
 			isa = PBXGroup;
 			children = (
-				152D004A2B958708000D8D1E /* physics.h */,
+				15FEAFAE2BB486E600884713 /* angle.cpp */,
+				15FEAFAF2BB486E600884713 /* angle.h */,
+				15FEAFB72BB486E600884713 /* bullet.h */,
+				15FEAFB42BB486E600884713 /* config.h */,
+				15FEAFA42BB486E600884713 /* Dragon.cpp */,
+				15FEAFB92BB486E600884713 /* Dragon.h */,
+				15FEAF9C2BB486E600884713 /* DragonCenter.h */,
+				15FEAFA02BB486E600884713 /* DragonLeft.h */,
+				15FEAF9F2BB486E600884713 /* DragonRight.h */,
+				15FEAF9E2BB486E600884713 /* Earth.h */,
+				15FEAFAB2BB486E600884713 /* fragment.h */,
+				15FEAFC22BB486E600884713 /* gps.cpp */,
+				15FEAFBB2BB486E600884713 /* gps.h */,
+				15FEAFA92BB486E600884713 /* GPSCenter.h */,
+				15FEAFBE2BB486E600884713 /* GPSLeft.h */,
+				15FEAFAC2BB486E600884713 /* GPSRight.h */,
+				15FEAFBA2BB486E600884713 /* Hubble.cpp */,
+				15FEAFAD2BB486E600884713 /* Hubble.h */,
+				15FEAFB32BB486E600884713 /* HubbleComputer.h */,
+				15FEAFA82BB486E600884713 /* HubbleLeft.h */,
+				15FEAFB52BB486E600884713 /* HubbleRight.h */,
+				15FEAFB22BB486E600884713 /* HubbleTelescope.h */,
+				15FEAFA52BB486E600884713 /* object.cpp */,
+				15FEAFA12BB486E600884713 /* object.h */,
+				15FEAFB02BB486E600884713 /* part.h */,
+				15FEAFC02BB486E600884713 /* simulation.h */,
+				15FEAFAA2BB486E600884713 /* SourceFile.cpp */,
+				15FEAFC12BB486E600884713 /* sputnik.cpp */,
+				15FEAFBC2BB486E600884713 /* sputnik.h */,
+				15FEAFBF2BB486E600884713 /* star.h */,
+				15FEAFA22BB486E600884713 /* starLink.cpp */,
+				15FEAFB62BB486E600884713 /* starLink.h */,
+				15FEAFA62BB486E600884713 /* StarLinkArray.h */,
+				15FEAFA32BB486E600884713 /* StarLinkBody.h */,
+				15FEAFB82BB486E600884713 /* stars.h */,
+				15FEAFA72BB486E600884713 /* StarShipEnterprise.cpp */,
+				15FEAFB12BB486E600884713 /* StarShipEnterprise.h */,
+				15FEAFBD2BB486E600884713 /* testObject.h */,
+				15FEAF9D2BB486E600884713 /* velocity.h */,
 				C179C6C227E375D600E3E514 /* position.h */,
 				C179C6C027E375AF00E3E514 /* position.cpp */,
-				C11C7EA625780B5C00EA4B2E /* Lab07.cpp */,
 				C11C7EA725780B5C00EA4B2E /* test.cpp */,
 				C11C7EAC25780B6000EA4B2E /* test.h */,
 				C11C7EAF25780B6500EA4B2E /* testPosition.h */,
@@ -152,10 +234,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C11C7EB525780B6500EA4B2E /* uiDraw.cpp in Sources */,
-				C11C7EB125780B6500EA4B2E /* Lab07.cpp in Sources */,
+				15FEAFC62BB486FA00884713 /* Hubble.cpp in Sources */,
+				15FEAFCB2BB4870A00884713 /* StarShipEnterprise.cpp in Sources */,
+				15FEAFC52BB486F700884713 /* gps.cpp in Sources */,
+				15FEAFC72BB486FD00884713 /* object.cpp in Sources */,
 				C11C7EB225780B6500EA4B2E /* test.cpp in Sources */,
+				15FEAFC92BB4870200884713 /* sputnik.cpp in Sources */,
 				C11C7EB325780B6500EA4B2E /* uiInteract.cpp in Sources */,
 				C179C6C127E375AF00E3E514 /* position.cpp in Sources */,
+				15FEAFC32BB486ED00884713 /* angle.cpp in Sources */,
+				15FEAFC42BB486F400884713 /* Dragon.cpp in Sources */,
+				15FEAFC82BB4870000884713 /* SourceFile.cpp in Sources */,
+				15FEAFCA2BB4870600884713 /* starLink.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
