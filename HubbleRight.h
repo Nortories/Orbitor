@@ -11,20 +11,7 @@ public:
 		this->radius = HUBBLE_RIGHT_RADIUS;
 	};
 
-	void draw(ogstream* gout) {
-		gout->drawHubbleRight(position, this->angle.getRadians());
-	};
+	void draw(ogstream* gout);
 
-	list<Part*> getPartPieces()
-	{
-		list<Part*> pieces;
-
-		Fragment* fragment1 = new Fragment(position, velocity, Angle(0));
-		Fragment* fragment2 = new Fragment(position, velocity, Angle(0));
-
-		pieces.push_back(fragment1);
-		pieces.push_back(fragment2);
-
-		return pieces;
-	}
+   list<Part*> getPartPieces();
 };

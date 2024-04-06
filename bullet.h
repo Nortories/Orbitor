@@ -13,15 +13,7 @@ public:
 		range = BULLET_RANGE;
 		radius = 1;
 	};
-	void draw(ogstream* gout) {
-		gout->drawProjectile(position);
-
-		range--;
-		if (range <= 0)
-		{
-			triggerDestruction();
-		}
-	};
+	void draw(ogstream* gout);
 
 private:
 	int range;

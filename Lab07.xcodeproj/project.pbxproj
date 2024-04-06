@@ -16,6 +16,22 @@
 		15FEAFC92BB4870200884713 /* sputnik.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFC12BB486E600884713 /* sputnik.cpp */; };
 		15FEAFCA2BB4870600884713 /* starLink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFA22BB486E600884713 /* starLink.cpp */; };
 		15FEAFCB2BB4870A00884713 /* StarShipEnterprise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFA72BB486E600884713 /* StarShipEnterprise.cpp */; };
+		15FEAFCD2BC100A700884713 /* bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFCC2BC100A700884713 /* bullet.cpp */; };
+		15FEAFCF2BC10BE800884713 /* DragonCenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFCE2BC10BE800884713 /* DragonCenter.cpp */; };
+		15FEAFD12BC10DA900884713 /* DragonLeftcpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFD02BC10DA900884713 /* DragonLeftcpp.cpp */; };
+		15FEAFD32BC10F2700884713 /* DragonRight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFD22BC10F2700884713 /* DragonRight.cpp */; };
+		15FEAFD52BC10F9400884713 /* fragment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFD42BC10F9400884713 /* fragment.cpp */; };
+		15FEAFD72BC10FF700884713 /* GPSCenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFD62BC10FF700884713 /* GPSCenter.cpp */; };
+		15FEAFD92BC1105700884713 /* GPSLeft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFD82BC1105700884713 /* GPSLeft.cpp */; };
+		15FEAFDB2BC1111800884713 /* GPSRight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFDA2BC1111800884713 /* GPSRight.cpp */; };
+		15FEAFDD2BC1119900884713 /* HubbleComputer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFDC2BC1119900884713 /* HubbleComputer.cpp */; };
+		15FEAFDF2BC111FF00884713 /* HubbleLeft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFDE2BC111FF00884713 /* HubbleLeft.cpp */; };
+		15FEAFE12BC1125400884713 /* HubbleRight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFE02BC1125400884713 /* HubbleRight.cpp */; };
+		15FEAFE32BC112A600884713 /* HubbleTelescope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFE22BC112A600884713 /* HubbleTelescope.cpp */; };
+		15FEAFE52BC1320500884713 /* part.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFE42BC1320500884713 /* part.cpp */; };
+		15FEAFE72BC132CB00884713 /* simulation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFE62BC132CB00884713 /* simulation.cpp */; };
+		15FEAFE92BC1345200884713 /* StarLinkArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFE82BC1345200884713 /* StarLinkArray.cpp */; };
+		15FEAFEB2BC134EC00884713 /* StarLinkBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15FEAFEA2BC134EC00884713 /* StarLinkBody.cpp */; };
 		C11C7EA425780B2100EA4B2E /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C11C7EA225780B2100EA4B2E /* GLUT.framework */; };
 		C11C7EA525780B2100EA4B2E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C11C7EA325780B2100EA4B2E /* OpenGL.framework */; };
 		C11C7EB225780B6500EA4B2E /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C11C7EA725780B5C00EA4B2E /* test.cpp */; };
@@ -76,6 +92,22 @@
 		15FEAFC02BB486E600884713 /* simulation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simulation.h; sourceTree = "<group>"; };
 		15FEAFC12BB486E600884713 /* sputnik.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sputnik.cpp; sourceTree = "<group>"; };
 		15FEAFC22BB486E600884713 /* gps.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gps.cpp; sourceTree = "<group>"; };
+		15FEAFCC2BC100A700884713 /* bullet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = bullet.cpp; sourceTree = "<group>"; };
+		15FEAFCE2BC10BE800884713 /* DragonCenter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DragonCenter.cpp; sourceTree = "<group>"; };
+		15FEAFD02BC10DA900884713 /* DragonLeftcpp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DragonLeftcpp.cpp; sourceTree = "<group>"; };
+		15FEAFD22BC10F2700884713 /* DragonRight.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DragonRight.cpp; sourceTree = "<group>"; };
+		15FEAFD42BC10F9400884713 /* fragment.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fragment.cpp; sourceTree = "<group>"; };
+		15FEAFD62BC10FF700884713 /* GPSCenter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GPSCenter.cpp; sourceTree = "<group>"; };
+		15FEAFD82BC1105700884713 /* GPSLeft.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GPSLeft.cpp; sourceTree = "<group>"; };
+		15FEAFDA2BC1111800884713 /* GPSRight.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GPSRight.cpp; sourceTree = "<group>"; };
+		15FEAFDC2BC1119900884713 /* HubbleComputer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HubbleComputer.cpp; sourceTree = "<group>"; };
+		15FEAFDE2BC111FF00884713 /* HubbleLeft.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HubbleLeft.cpp; sourceTree = "<group>"; };
+		15FEAFE02BC1125400884713 /* HubbleRight.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HubbleRight.cpp; sourceTree = "<group>"; };
+		15FEAFE22BC112A600884713 /* HubbleTelescope.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HubbleTelescope.cpp; sourceTree = "<group>"; };
+		15FEAFE42BC1320500884713 /* part.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = part.cpp; sourceTree = "<group>"; };
+		15FEAFE62BC132CB00884713 /* simulation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = simulation.cpp; sourceTree = "<group>"; };
+		15FEAFE82BC1345200884713 /* StarLinkArray.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StarLinkArray.cpp; sourceTree = "<group>"; };
+		15FEAFEA2BC134EC00884713 /* StarLinkBody.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StarLinkBody.cpp; sourceTree = "<group>"; };
 		C11C7E962578098A00EA4B2E /* Lab07 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab07; sourceTree = BUILT_PRODUCTS_DIR; };
 		C11C7EA225780B2100EA4B2E /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		C11C7EA325780B2100EA4B2E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -106,12 +138,28 @@
 		C11C7E8D2578098A00EA4B2E = {
 			isa = PBXGroup;
 			children = (
+				15FEAFEA2BC134EC00884713 /* StarLinkBody.cpp */,
+				15FEAFE82BC1345200884713 /* StarLinkArray.cpp */,
+				15FEAFE62BC132CB00884713 /* simulation.cpp */,
+				15FEAFE42BC1320500884713 /* part.cpp */,
+				15FEAFE22BC112A600884713 /* HubbleTelescope.cpp */,
+				15FEAFE02BC1125400884713 /* HubbleRight.cpp */,
+				15FEAFDE2BC111FF00884713 /* HubbleLeft.cpp */,
+				15FEAFDC2BC1119900884713 /* HubbleComputer.cpp */,
+				15FEAFDA2BC1111800884713 /* GPSRight.cpp */,
+				15FEAFD82BC1105700884713 /* GPSLeft.cpp */,
+				15FEAFD62BC10FF700884713 /* GPSCenter.cpp */,
+				15FEAFD42BC10F9400884713 /* fragment.cpp */,
+				15FEAFD22BC10F2700884713 /* DragonRight.cpp */,
+				15FEAFD02BC10DA900884713 /* DragonLeftcpp.cpp */,
+				15FEAFCC2BC100A700884713 /* bullet.cpp */,
+				15FEAFB72BB486E600884713 /* bullet.h */,
 				15FEAFAE2BB486E600884713 /* angle.cpp */,
 				15FEAFAF2BB486E600884713 /* angle.h */,
-				15FEAFB72BB486E600884713 /* bullet.h */,
 				15FEAFB42BB486E600884713 /* config.h */,
 				15FEAFA42BB486E600884713 /* Dragon.cpp */,
 				15FEAFB92BB486E600884713 /* Dragon.h */,
+				15FEAFCE2BC10BE800884713 /* DragonCenter.cpp */,
 				15FEAF9C2BB486E600884713 /* DragonCenter.h */,
 				15FEAFA02BB486E600884713 /* DragonLeft.h */,
 				15FEAF9F2BB486E600884713 /* DragonRight.h */,
@@ -234,18 +282,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				C11C7EB525780B6500EA4B2E /* uiDraw.cpp in Sources */,
+				15FEAFD92BC1105700884713 /* GPSLeft.cpp in Sources */,
 				15FEAFC62BB486FA00884713 /* Hubble.cpp in Sources */,
+				15FEAFCF2BC10BE800884713 /* DragonCenter.cpp in Sources */,
 				15FEAFCB2BB4870A00884713 /* StarShipEnterprise.cpp in Sources */,
 				15FEAFC52BB486F700884713 /* gps.cpp in Sources */,
 				15FEAFC72BB486FD00884713 /* object.cpp in Sources */,
+				15FEAFDF2BC111FF00884713 /* HubbleLeft.cpp in Sources */,
 				C11C7EB225780B6500EA4B2E /* test.cpp in Sources */,
 				15FEAFC92BB4870200884713 /* sputnik.cpp in Sources */,
+				15FEAFCD2BC100A700884713 /* bullet.cpp in Sources */,
 				C11C7EB325780B6500EA4B2E /* uiInteract.cpp in Sources */,
 				C179C6C127E375AF00E3E514 /* position.cpp in Sources */,
+				15FEAFDD2BC1119900884713 /* HubbleComputer.cpp in Sources */,
+				15FEAFD52BC10F9400884713 /* fragment.cpp in Sources */,
+				15FEAFD12BC10DA900884713 /* DragonLeftcpp.cpp in Sources */,
+				15FEAFE12BC1125400884713 /* HubbleRight.cpp in Sources */,
+				15FEAFE92BC1345200884713 /* StarLinkArray.cpp in Sources */,
+				15FEAFE32BC112A600884713 /* HubbleTelescope.cpp in Sources */,
 				15FEAFC32BB486ED00884713 /* angle.cpp in Sources */,
+				15FEAFEB2BC134EC00884713 /* StarLinkBody.cpp in Sources */,
+				15FEAFDB2BC1111800884713 /* GPSRight.cpp in Sources */,
+				15FEAFE52BC1320500884713 /* part.cpp in Sources */,
+				15FEAFD32BC10F2700884713 /* DragonRight.cpp in Sources */,
 				15FEAFC42BB486F400884713 /* Dragon.cpp in Sources */,
+				15FEAFE72BC132CB00884713 /* simulation.cpp in Sources */,
 				15FEAFC82BB4870000884713 /* SourceFile.cpp in Sources */,
 				15FEAFCA2BB4870600884713 /* starLink.cpp in Sources */,
+				15FEAFD72BC10FF700884713 /* GPSCenter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

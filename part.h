@@ -13,16 +13,8 @@ public:
 		this->angularVelocity = random(-.25, .25);
 	};
 
-    void setRadians(float radians) {
-		this->angle.setRadians(radians);
-	};
+    void setRadians(float radians);
 
-    void tossPart(float throwPartAngle) {
-		this->velocity.add(Velocity(random(5000, 9000), Angle(throwPartAngle)));
-		// move the PART 5 times to make sure it doesn't get stuck
-		for (int i = 0; i < 10; i++) {
-			updatePosition();
-		}
-	};
+    void tossPart(float throwPartAngle);
 };
 
